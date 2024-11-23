@@ -1,0 +1,43 @@
+/* Styles for the button container */
+.button-container {
+    display: flex; /* Enables a flex layout for buttons */
+    gap: 1rem; /* Adds spacing between buttons */
+    margin-top: 1rem; /* Adds spacing above the button section */
+}
+
+/* General button styles */
+button {
+    padding: 0.5rem 1rem; /* Adds padding inside the button for better usability */
+    font-size: 1rem; /* Sets a standard font size for button text */
+    cursor: pointer; /* Changes cursor to indicate the button is clickable */
+}
+
+/* Animal Grid Styles */
+.animal-grid {
+    display: grid; /* Uses a grid layout for animal cards */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Creates responsive columns with a minimum width of 200px */
+    gap: 1rem; /* Adds spacing between grid items */
+    margin-top: 2rem; /* Adds spacing above the grid */
+}
+
+/* Individual animal card styles */
+.animal-card {
+    border: 1px solid #ccc; /* Adds a subtle border around each card */
+    border-radius: 8px; /* Rounds the corners of the card */
+    padding: 1rem; /* Adds internal spacing within the card */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for a lifted appearance */
+    text-align: center; /* Centers the text inside the card */
+    background-color: #fff; /* Sets a white background color */
+}
+
+/* Styles for the card title */
+.animal-card h3 {
+    margin-top: 0; /* Removes default margin at the top of the heading */
+    color: #333; /* Sets a dark gray color for the title */
+}
+
+/* Styles for card paragraph content */
+.animal-card p {
+    margin: 0.5rem 0; /* Adds vertical spacing around paragraphs */
+    color: #555; /* Sets a medium gray color for text */
+}

@@ -1,0 +1,162 @@
+:host {
+    /* Base layout for the host element to cover the entire viewport */
+    display: block;
+    position: fixed; /* Ensures the element spans the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    overflow: auto; /* Enables scrolling for overflow content */
+
+    /* Background styling: gradient overlay with a centered image */
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9)),
+                url('/assets/background.jpg');
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents background repetition */
+}
+
+.title-container {
+    /* Styles for the title section */
+    display: flex; /* Enables flexbox for layout */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    width: 100%; /* Full width */
+    margin-top: 20px; /* Optional: adds spacing from the top */
+    position: relative; /* Allows positioning of the buttons */
+    text-align: center; /* Centers the text */
+
+    .auth-buttons {
+        /* Styles for the Login and Register buttons */
+        position: absolute;
+        top: 50%; /* Aligns vertically with the title */
+        right: 20px; /* Adds spacing from the right edge */
+        transform: translateY(-50%); /* Centers vertically within the container */
+
+        button {
+            margin: 0 5px; /* Spacing between buttons */
+            padding: 0.5rem 1rem; /* Padding for usability */
+            font-size: 1rem; /* Readable font size */
+            cursor: pointer; /* Indicates clickable buttons */
+            background-color: #007bff; /* Blue background */
+            color: white; /* White text color */
+            border: none; /* Removes default border */
+            border-radius: 4px; /* Rounded corners */
+            transition: background-color 0.3s ease; /* Smooth hover transition */
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+    }
+}
+
+.title-container h1 {
+    /* Styles for the title text */
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    text-shadow: 1px 1px 0px #999, 2px 2px 0px #888, 3px 3px 0px #777;
+    transform: perspective(500px) rotateX(10deg);
+}
+
+.button-container {
+    /* Styles for the button section */
+    display: flex; /* Enables flexbox layout */
+    justify-content: center;
+    gap: 1rem; /* Adds spacing between buttons */
+    margin-top: 1rem; /* Adds spacing from the title or other content */
+}
+
+button {
+    /* Shared styling for all buttons */
+    padding: 0.5rem 1rem; /* Adds padding for better usability */
+    font-size: 1rem; /* Sets a readable font size */
+    cursor: pointer; /* Indicates the button is clickable */
+}
+
+.add-button {
+    /* Specific styling for the "Add New Animal" button */
+    background-color: #28a745; /* Green background for positive action */
+    color: white; /* White text color */
+    border: none; /* Removes default border */
+    border-radius: 4px; /* Adds rounded corners */
+}
+
+.add-button:hover {
+    /* Hover effect for the "Add New Animal" button */
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Grid layout for the animal list */
+.animal-grid {
+    display: grid; /* Grid layout for the list */
+    gap: 1rem; /* Adds spacing between rows */
+    margin-top: 2rem; /* Adds spacing from the button section */
+}
+
+/* Styles for the header row */
+.animal-header {
+    display: grid; /* Grid layout for the header */
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1.5fr 1.5fr 1fr 1.5fr; /* Defines column widths */
+    font-weight: bold; /* Bold text for headers */
+    text-align: center; /* Centers the header text */
+    background-color: #e0e0e0; /* Light gray background */
+    border-bottom: 2px solid #ccc; /* Adds a bottom border */
+    padding: 0.5rem 0; /* Adds vertical padding */
+}
+
+/* Styles for individual animal rows */
+.animal-row {
+    display: grid; /* Grid layout for animal rows */
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1.5fr 1.5fr 1fr 1.5fr; /* Matches the header layout */
+    text-align: center; /* Centers the text */
+    border-bottom: 1px solid #ddd; /* Adds a subtle border for separation */
+    padding: 0.5rem 0; /* Adds vertical padding */
+}
+
+.animal-row span {
+    /* Styles for individual cells in the row */
+    padding: 0.5rem; /* Adds padding inside cells */
+    display: flex; /* Enables flexbox layout */
+    align-items: center; /* Vertically centers content */
+    justify-content: center; /* Horizontally centers content */
+}
+
+.animal-row button {
+    /* Specific styling for the "Edit" button */
+    padding: 0.3rem 0.6rem; /* Smaller padding for compact design */
+    font-size: 0.9rem; /* Slightly smaller font size */
+    cursor: pointer; /* Indicates the button is clickable */
+    background-color: #007bff; /* Blue background for the "Edit" button */
+    color: white; /* White text color */
+    border: none; /* Removes default border */
+    border-radius: 4px; /* Adds rounded corners */
+}
+
+.animal-row button:hover {
+    /* Hover effect for the "Edit" button */
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.animal-card .monkey-details {
+    color: green;
+    font-style: italic;
+}
+
+.dog-image-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between images */
+    margin-top: 20px;
+}
+
+.dog-image {
+    width: 550px; /* Adjust image width */
+    height: auto;
+    border-radius: 8px; /* Optional: Rounded corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Optional: Shadow effect */
+}

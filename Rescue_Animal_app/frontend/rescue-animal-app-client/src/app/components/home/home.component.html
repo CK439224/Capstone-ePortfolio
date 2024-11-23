@@ -1,0 +1,73 @@
+<!-- Container for the page title -->
+<div class="title-container">
+    <h1>{{ title }}</h1> <!-- Dynamic title binding -->
+    <!-- Buttons for Login and Register -->
+    <div class="auth-buttons">
+        <button (click)="onLoginClick()">Login</button>
+        <button (click)="onRegisterClick()">Register</button>
+    </div>
+</div>
+
+<div class="dog-image-row">
+    <img src="assets/Dog1.png" alt="Dog1" class="dog-image" />
+    <img src="assets/Dog2.png" alt="Dog2" class="dog-image" />
+    <img src="assets/Dog3.png" alt="Dog3" class="dog-image" />
+</div>
+
+<!-- Button section for navigation -->
+<div class="button-container">
+    <!-- Button to navigate to the current animals list -->
+    <button routerLink="/current-animals">View Current Animals</button>
+    
+    <!-- Button to navigate to the add-animal form -->
+    <button routerLink="/add-animal" class="add-button">Add New Animal</button>
+</div>
+
+<!-- Animal list display section -->
+<div *ngIf="showAnimalList" class="animal-grid">
+    <!-- Header row: Displays column titles for animal attributes -->
+    <div class="animal-row animal-header">
+        <span>Actions</span>
+        <span>Name</span>
+        <span>Type</span>
+        <span>Gender</span>
+        <span>Age</span>
+        <span>Weight</span>
+        <span>Acquisition Date</span>
+        <span>Acquisition Country</span>
+        <span>Training Status</span>
+        <span>Reserved</span>
+        <span>In Service Country</span>
+    </div>
+
+    <!-- Animal rows: Iterates over the list of animals and displays their details -->
+    <div *ngFor="let animal of animals" class="animal-row animal-card">
+        <!-- Edit button for modifying animal details -->
+        <span>
+            <button [routerLink]="['/edit-animal', animal._id]">Edit</button>
+        </span>
+        
+        <!-- Animal details, with default values for missing attributes -->
+        <span>{{ animal.name || 'N/A' }}</span> <!-- Animal name -->
+        <span>{{ animal.type || 'N/A' }}</span> <!-- Animal type -->
+        <span>{{ animal.gender || 'N/A' }}</span> <!-- Animal gender -->
+        <span>{{ animal.age !== undefined ? animal.age : 'N/A' }}</span> <!-- Animal age -->
+        <span>{{ animal.weight !== undefined ? animal.weight : 'N/A' }}</span> <!-- Animal weight -->
+        <span>{{ animal.acquisitionDate || 'N/A' }}</span> <!-- Acquisition date -->
+        <span>{{ animal.acquisitionCountry || 'N/A' }}</span> <!-- Acquisition country -->
+        <span>{{ animal.trainingStatus || 'N/A' }}</span> <!-- Training status -->
+        <span>
+            <!-- Reserved status: Displays Yes/No or N/A if undefined -->
+            {{ animal.reserved !== undefined ? (animal.reserved ? 'Yes' : 'No') : 'N/A' }}
+        </span>
+        <span>{{ animal.inServiceCountry || 'N/A' }}</span> <!-- In-service country -->
+
+        <!-- Additional fields for monkeys -->
+        <ng-container *ngIf="animal.type === 'Monkey'">
+            <span>{{ animal.tailLength || 'N/A' }} cm (Tail Length)</span>
+            <span>{{ animal.height || 'N/A' }} cm (Height)</span>
+            <span>{{ animal.bodyLength || 'N/A' }} cm (Body Length)</span>
+            <span>{{ animal.species || 'N/A' }} (Species)</span>
+        </ng-container>
+    </div>
+</div>

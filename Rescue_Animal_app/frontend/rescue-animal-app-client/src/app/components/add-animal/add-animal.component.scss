@@ -1,0 +1,84 @@
+:host {
+    /* Full-screen layout with a gradient overlay and centered background image */
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9)), 
+                url('/assets/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.form-container {
+    /* Center-aligned form container with vertical layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+form {
+    /* Form width constraints for better layout */
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-group {
+    /* Vertical alignment of label and input */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+label {
+    /* Styling for labels */
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-control {
+    /* Input field styling for consistency */
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.submit-button,
+.cancel-button {
+    /* Shared button styles */
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#reserved {
+    /* Checkbox-specific styling */
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.submit-button {
+    /* Save button styling */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
+
+.cancel-button {
+    /* Cancel button styling */
+    background-color: #f44336;
+    color: white;
+    border: none;
+}

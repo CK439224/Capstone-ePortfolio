@@ -1,0 +1,120 @@
+<h2>Current Animals</h2>
+
+<!-- Back to Homepage Button -->
+<button (click)="goToHomepage()" class="back-button">Back to Home</button>
+
+<!-- Sorting Instruction Text -->
+<p class="sort-instruction">Click on a heading to sort.</p>
+
+<!-- Animal List Container -->
+<div *ngIf="showAnimalList">
+  <!-- Dog List Section -->
+  <div class="animal-list-section">
+    <h3>Dogs</h3>
+    <!-- Dog Table Headers -->
+    <div class="animal-row animal-header">
+      <span (click)="setDogSort('name')" [ngClass]="{ 'active-sort': isDogActiveSort('name') }">
+        Name {{ getDogSortArrow('name') }}
+      </span>
+      <span (click)="setDogSort('type')" [ngClass]="{ 'active-sort': isDogActiveSort('type') }">
+        Type {{ getDogSortArrow('type') }}
+      </span>
+      <span (click)="setDogSort('gender')" [ngClass]="{ 'active-sort': isDogActiveSort('gender') }">
+        Gender {{ getDogSortArrow('gender') }}
+      </span>
+      <span (click)="setDogSort('age')" [ngClass]="{ 'active-sort': isDogActiveSort('age') }">
+        Age {{ getDogSortArrow('age') }}
+      </span>
+      <span (click)="setDogSort('acquisitionCountry')" [ngClass]="{ 'active-sort': isDogActiveSort('acquisitionCountry') }">
+        Acquisition Country {{ getDogSortArrow('acquisitionCountry') }}
+      </span>
+      <span (click)="setDogSort('trainingStatus')" [ngClass]="{ 'active-sort': isDogActiveSort('trainingStatus') }">
+        Training Status {{ getDogSortArrow('trainingStatus') }}
+      </span>
+      <span (click)="setDogSort('reserved')" [ngClass]="{ 'active-sort': isDogActiveSort('reserved') }">
+        Reserved {{ getDogSortArrow('reserved') }}
+      </span>
+      <span (click)="setDogSort('inServiceCountry')" [ngClass]="{ 'active-sort': isDogActiveSort('inServiceCountry') }">
+        In Service Country {{ getDogSortArrow('inServiceCountry') }}
+      </span>
+      <span>Actions</span>
+    </div>
+    <!-- Dog List -->
+    <div *ngFor="let dog of dogList" class="animal-row animal-card">
+      <span>{{ dog.name || 'N/A' }}</span>
+      <span>{{ dog.type || 'N/A' }}</span>
+      <span>{{ dog.gender || 'N/A' }}</span>
+      <span>{{ dog.age !== undefined ? dog.age : 'N/A' }}</span>
+      <span>{{ dog.acquisitionCountry || 'N/A' }}</span>
+      <span>{{ dog.trainingStatus || 'N/A' }}</span>
+      <span>{{ dog.reserved !== undefined ? (dog.reserved ? 'Yes' : 'No') : 'N/A' }}</span>
+      <span>{{ dog.inServiceCountry || 'N/A' }}</span>
+      <span>
+        <button [routerLink]="['/edit-animal', dog._id]" class="edit-button">Edit</button>
+      </span>
+    </div>
+  </div>
+
+  <!-- Monkey List Section -->
+  <div class="animal-list-section">
+    <h3>Monkeys</h3>
+    <!-- Monkey Table Headers -->
+    <div class="animal-row animal-header">
+      <span (click)="setMonkeySort('name')" [ngClass]="{ 'active-sort': isMonkeyActiveSort('name') }">
+        Name {{ getMonkeySortArrow('name') }}
+      </span>
+      <span (click)="setMonkeySort('type')" [ngClass]="{ 'active-sort': isMonkeyActiveSort('type') }">
+        Type {{ getMonkeySortArrow('type') }}
+      </span>
+      <span (click)="setMonkeySort('gender')" [ngClass]="{ 'active-sort': isMonkeyActiveSort('gender') }">
+        Gender {{ getMonkeySortArrow('gender') }}
+      </span>
+      <span (click)="setMonkeySort('age')" [ngClass]="{ 'active-sort': isMonkeyActiveSort('age') }">
+        Age {{ getMonkeySortArrow('age') }}
+      </span>
+      <span (click)="setMonkeySort('acquisitionCountry')" [ngClass]="{ 'active-sort': isMonkeyActiveSort('acquisitionCountry') }">
+        Acquisition Country {{ getMonkeySortArrow('acquisitionCountry') }}
+      </span>
+      <span (click)="setMonkeySort('trainingStatus')" [ngClass]="{ 'active-sort': isMonkeyActiveSort('trainingStatus') }">
+        Training Status {{ getMonkeySortArrow('trainingStatus') }}
+      </span>
+      <span (click)="setMonkeySort('reserved')" [ngClass]="{ 'active-sort': isMonkeyActiveSort('reserved') }">
+        Reserved {{ getMonkeySortArrow('reserved') }}
+      </span>
+      <span (click)="setMonkeySort('inServiceCountry')" [ngClass]="{ 'active-sort': isMonkeyActiveSort('inServiceCountry') }">
+        In Service Country {{ getMonkeySortArrow('inServiceCountry') }}
+      </span>
+      <span (click)="setMonkeySort('species')" [ngClass]="{ 'active-sort': isMonkeyActiveSort('species') }">
+        Species {{ getMonkeySortArrow('species') }}
+      </span>
+      <span (click)="setMonkeySort('tailLength')" [ngClass]="{ 'active-sort': isMonkeyActiveSort('tailLength') }">
+        Tail Length {{ getMonkeySortArrow('tailLength') }}
+      </span>
+      <span (click)="setMonkeySort('height')" [ngClass]="{ 'active-sort': isMonkeyActiveSort('height') }">
+        Height {{ getMonkeySortArrow('height') }}
+      </span>
+      <span (click)="setMonkeySort('bodyLength')" [ngClass]="{ 'active-sort': isMonkeyActiveSort('bodyLength') }">
+        Body Length {{ getMonkeySortArrow('bodyLength') }}
+      </span>
+      <span>Actions</span>
+    </div>
+    <!-- Monkey List -->
+    <div *ngFor="let monkey of monkeyList" class="animal-row animal-card">
+      <span>{{ monkey.name || 'N/A' }}</span>
+      <span>{{ monkey.type || 'N/A' }}</span>
+      <span>{{ monkey.gender || 'N/A' }}</span>
+      <span>{{ monkey.age !== undefined ? monkey.age : 'N/A' }}</span>
+      <span>{{ monkey.acquisitionCountry || 'N/A' }}</span>
+      <span>{{ monkey.trainingStatus || 'N/A' }}</span>
+      <span>{{ monkey.reserved !== undefined ? (monkey.reserved ? 'Yes' : 'No') : 'N/A' }}</span>
+      <span>{{ monkey.inServiceCountry || 'N/A' }}</span>
+      <span>{{ monkey.species || 'N/A' }}</span>
+      <span>{{ monkey.tailLength || 'N/A' }} cm</span>
+      <span>{{ monkey.height || 'N/A' }} cm</span>
+      <span>{{ monkey.bodyLength || 'N/A' }} cm</span>
+      <span>
+        <button [routerLink]="['/edit-animal', monkey._id]" class="edit-button">Edit</button>
+      </span>
+    </div>
+  </div>
+</div>

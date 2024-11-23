@@ -1,0 +1,95 @@
+:host {
+  /* Host container styles for full-screen layout with a background image */
+  display: block;
+  position: fixed; /* Ensures the host spans across the viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+
+  /* Background settings: gradient overlay with a centered image */
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9)),
+              url('/assets/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.animal-grid-container {
+  /* Grid container for organizing animal data */
+  display: grid;
+  grid-template-rows: auto; /* Stacks header and data rows vertically */
+}
+
+.animal-row {
+  /* Grid row for animal data with multiple columns and spacing */
+  display: grid;
+  grid-template-columns: repeat(14, 1fr); /* 9 equal-width columns */
+  gap: 10px; /* Spacing between columns */
+  padding: 8px 0; /* Vertical padding */
+  align-items: center; /* Centers content vertically */
+}
+
+.animal-header {
+  /* Styles for the header row */
+  font-weight: bold; /* Makes the text bold */
+  background-color: #f0f0f0; /* Light gray background for header */
+}
+
+.animal-card {
+  /* Styles for individual animal data rows */
+  border-bottom: 1px solid #ddd; /* Adds a subtle divider */
+}
+
+.back-button {
+  /* Back button styles */
+  margin-bottom: 10px; /* Spacing below the button */
+  padding: 8px 12px; /* Adds padding inside the button */
+  background-color: #007bff; /* Primary blue color */
+  color: #fff; /* White text */
+  border: none; /* Removes default border */
+  border-radius: 4px; /* Adds rounded corners */
+  cursor: pointer; /* Changes cursor to indicate clickability */
+}
+
+.back-button:hover {
+  /* Hover effect for back button */
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.edit-button {
+  /* Edit button styles */
+  padding: 4px 8px; /* Smaller padding for compact design */
+  background-color: #28a745; /* Green color for edit */
+  color: #fff; /* White text */
+  border: none; /* Removes default border */
+  border-radius: 4px; /* Adds rounded corners */
+  cursor: pointer; /* Indicates button is clickable */
+}
+
+.edit-button:hover {
+  /* Hover effect for edit button */
+  background-color: #218838; /* Darker green on hover */
+}
+
+.sort-instruction {
+  /* Styles for sorting instruction text */
+  font-style: italic; /* Italicized for emphasis */
+  margin-bottom: 8px; /* Spacing below the instruction */
+  color: #555; /* Subtle gray color */
+}
+
+.active-sort {
+  /* Highlight for active sort option */
+  color: #007bff; /* Primary blue to indicate active sort */
+}
+
+.monkey-specific {
+  margin-top: 10px;
+  padding: 5px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+}
