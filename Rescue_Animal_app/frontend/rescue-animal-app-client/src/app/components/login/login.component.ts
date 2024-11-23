@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.scss'],
+    standalone: true,
+    imports: [ReactiveFormsModule, FormsModule]
 })
 export class LoginComponent {
   loginForm: FormGroup;
@@ -16,7 +20,7 @@ export class LoginComponent {
     });
   }
 
-  onSubmit(): void {
-    console.log('Login Data:', this.loginForm.value);
+  onSubmit(form: any): void {
+    console.log('Login Data:', form.value);
   }
 }

@@ -7,11 +7,10 @@ import { RouterOutlet } from '@angular/router';
  * Acts as the entry point and container for all other components and routes.
  */
 @Component({
-  selector: 'app-root', // Component selector used in the index.html file
-  standalone: true, // Indicates this is a standalone component
-  imports: [RouterOutlet], // Imports the RouterOutlet directive for route rendering
-  templateUrl: './app.component.html', // Path to the HTML template for this component
-  styleUrl: './app.component.scss' // Path to the SCSS styles for this component
+    selector: 'app-root', // Indicates this is a standalone component
+    imports: [RouterOutlet], // Imports the RouterOutlet directive for route rendering
+    templateUrl: './app.component.html', // Path to the HTML template for this component
+    styleUrl: './app.component.scss' // Path to the SCSS styles for this component
 })
 export class AppComponent {
   title = 'rescue-animal-app-client'; // Application title, used throughout the app

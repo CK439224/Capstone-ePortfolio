@@ -31,8 +31,7 @@ interface Animal {
  * Displays the welcome message and allows navigation to animal-related actions.
  */
 @Component({
-    selector: 'app-home', // Component selector
-    standalone: true, // Indicates this is a standalone component
+    selector: 'app-home', // Indicates this is a standalone component
     imports: [CommonModule, RouterModule], // Required Angular modules
     templateUrl: './home.component.html', // Path to the HTML template
     styleUrls: ['./home.component.scss'] // Path to the component's styles

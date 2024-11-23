@@ -6,11 +6,10 @@ import { CommonModule } from '@angular/common';
 
 /* Component metadata defining selector, template, styles, and imports */
 @Component({
-    selector: 'app-add-animal', 
-    standalone: true, 
-    imports: [FormsModule, CommonModule], 
-    templateUrl: './add-animal.component.html', 
-    styleUrls: ['./add-animal.component.scss'] 
+    selector: 'app-add-animal',
+    imports: [FormsModule, CommonModule],
+    templateUrl: './add-animal.component.html',
+    styleUrls: ['./add-animal.component.scss']
 })
 export class AddAnimalComponent {
     /* Property to bind the animal form data with default initialization */

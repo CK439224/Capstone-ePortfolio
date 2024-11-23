@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-animal-form',
-  standalone: true,
-  imports: [],
-  templateUrl: './animal-form.component.html',
-  styleUrl: './animal-form.component.scss'
+    selector: 'app-animal-form',
+    imports: [],
+    templateUrl: './animal-form.component.html',
+    styleUrl: './animal-form.component.scss'
 })
 export class AnimalFormComponent {
 

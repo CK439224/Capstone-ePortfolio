@@ -5,11 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-edit-animal',
-  standalone: true,
-  imports: [FormsModule, CommonModule],
-  templateUrl: './edit-animal.component.html',
-  styleUrls: ['./edit-animal.component.scss']
+    selector: 'app-edit-animal',
+    imports: [FormsModule, CommonModule],
+    templateUrl: './edit-animal.component.html',
+    styleUrls: ['./edit-animal.component.scss']
 })
 export class EditAnimalComponent implements OnInit {
   animal: Animal = {} as Animal; // Holds the animal's data

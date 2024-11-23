@@ -5,11 +5,10 @@ import { AnimalService, Animal } from '../../services/animal.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-animal-list',
-  standalone: true,
-  imports: [CommonModule, RouterModule],
-  templateUrl: './animal-list.component.html',
-  styleUrls: ['./animal-list.component.scss']
+    selector: 'app-animal-list',
+    imports: [CommonModule, RouterModule],
+    templateUrl: './animal-list.component.html',
+    styleUrls: ['./animal-list.component.scss']
 })
 export class AnimalListComponent implements OnInit {
   animals: Animal[] = [];

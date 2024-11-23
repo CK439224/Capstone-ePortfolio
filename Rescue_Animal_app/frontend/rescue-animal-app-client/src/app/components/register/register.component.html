@@ -1,14 +1,14 @@
 <div>
     <h2>Register</h2>
-    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
       <label for="username">Username</label>
-      <input id="username" formControlName="username" type="text" required />
+      <input id="username" name="username" ngModel required />
   
       <label for="email">Email</label>
-      <input id="email" formControlName="email" type="email" required />
+      <input id="email" name="email" ngModel type="email" required />
   
       <label for="password">Password</label>
-      <input id="password" formControlName="password" type="password" required />
+      <input id="password" name="password" ngModel type="password" required />
   
       <button type="submit" [disabled]="registerForm.invalid">Register</button>
     </form>

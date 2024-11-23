@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+    selector: 'app-register',
+    templateUrl: './register.component.html',
+    styleUrls: ['./register.component.scss'],
+    standalone: true,
+    imports: [ReactiveFormsModule, FormsModule]
 })
 export class RegisterComponent {
   registerForm: FormGroup;
@@ -17,7 +21,7 @@ export class RegisterComponent {
     });
   }
 
-  onSubmit(): void {
-    console.log('Register Data:', this.registerForm.value);
+  onSubmit(form: any): void {
+    console.log('Register Data:', form.value);
   }
 }
