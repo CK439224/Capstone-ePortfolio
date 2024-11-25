@@ -50,7 +50,7 @@
       <span>{{ dog.reserved !== undefined ? (dog.reserved ? 'Yes' : 'No') : 'N/A' }}</span>
       <span>{{ dog.inServiceCountry || 'N/A' }}</span>
       <span>
-        <button [routerLink]="['/edit-animal', dog._id]" class="edit-button">Edit</button>
+        <button *ngIf="isLoggedIn" [routerLink]="['/edit-animal', dog._id]" class="edit-button">Edit</button>
       </span>
     </div>
   </div>
@@ -113,7 +113,7 @@
       <span>{{ monkey.height || 'N/A' }} cm</span>
       <span>{{ monkey.bodyLength || 'N/A' }} cm</span>
       <span>
-        <button [routerLink]="['/edit-animal', monkey._id]" class="edit-button">Edit</button>
+        <button *ngIf="isLoggedIn" [routerLink]="['/edit-animal', monkey._id]" class="edit-button">Edit</button>
       </span>
     </div>
   </div>

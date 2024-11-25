@@ -1,0 +1,93 @@
+:host {
+    display: block; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    height: 100vh; /* Full height of the viewport */
+    margin: 0;
+    padding: 0;
+
+    /* Background styling */
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9)),
+                url('/assets/background.jpg') no-repeat center center;
+    background-size: cover; /* Ensure the image covers the entire area */
+    background-attachment: fixed; /* Keep the image fixed during scrolling */
+
+    
+}
+
+.title-container {
+    /* Styles for the title section */
+    display: flex; /* Enables flexbox for layout */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    width: 100%; /* Full width */
+    margin-top: 20px; /* Optional: adds spacing from the top */
+    position: relative; /* Allows positioning of the buttons */
+    text-align: center; /* Centers the text */
+}
+
+form {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to ensure true center */
+    
+    display: flex; /* Enable Flexbox for the form */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center elements horizontally */
+    background: rgba(255, 255, 255, 0.8); /* Slightly opaque background */
+    padding: 30px; /* Add padding inside the form */
+    border-radius: 10px; /* Rounded corners for the form */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    max-width: 400px; /* Limit the form width */
+    width: 100%; /* Responsive width */
+}
+
+label {
+    font-size: 1rem; /* Adjust label font size */
+    margin-bottom: 5px; /* Add space below labels */
+    width: 100%; /* Full width for consistent alignment */
+}
+
+input {
+    width: 100%; /* Full width of the form container */
+    padding: 10px; /* Add padding inside the input */
+    margin-bottom: 15px; /* Add space below inputs */
+    border: 1px solid #ccc; /* Border color for the inputs */
+    border-radius: 5px; /* Rounded corners for inputs */
+    font-size: 1rem; /* Font size for inputs */
+}
+
+button {
+    padding: 10px 20px; /* Add padding to the button */
+    font-size: 1rem; /* Adjust button font size */
+    color: #fff; /* Button text color */
+    background-color: #007BFF; /* Button background color */
+    border: none; /* Remove button border */
+    border-radius: 5px; /* Rounded button corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    width: 100%; /* Full width for consistent alignment */
+}
+
+button:disabled {
+    background-color: #ccc; /* Change background color when disabled */
+    cursor: not-allowed; /* Show not-allowed cursor for disabled button */
+}
+
+button:hover:not(:disabled) {
+    background-color: #0056b3; /* Darken the button color on hover */
+}
+
+small {
+    color: #d9534f; /* Error message color */
+    font-size: 0.875rem; /* Adjust error message size */
+    text-align: left;
+    width: 100%; /* Ensure consistent alignment */
+    margin-bottom: 10px;
+}

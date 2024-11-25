@@ -1,17 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AnimalService, Animal } from '../../services/animal.service';
 import { Router } from '@angular/router';
+import { HomeComponent } from '../home/home.component';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
     selector: 'app-animal-list',
+    standalone: true,
     imports: [CommonModule, RouterModule],
     templateUrl: './animal-list.component.html',
     styleUrls: ['./animal-list.component.scss']
 })
 export class AnimalListComponent implements OnInit {
-  animals: Animal[] = [];
+  isLoggedIn: boolean = false;
+  @Input() animals: Animal[] = [];
   dogList: Animal[] = [];
   monkeyList: Animal[] = [];
   originalDogList: Animal[] = []; // To store the original order of dogs
@@ -24,13 +28,22 @@ export class AnimalListComponent implements OnInit {
   monkeySortKey: keyof Animal | '' = '';
   monkeySortDirection: 'asc' | 'desc' | '' = ''; // Add '' for no sorting
 
-  constructor(private router: Router, private animalService: AnimalService) {}
+  constructor(private router: Router, private animalService: AnimalService, private authService: AuthService) {}
+
+
 
   ngOnInit(): void {
+    this.authService.loggedIn$.subscribe((loggedIn) => {
+      this.isLoggedIn = loggedIn;
+      console.log('isLoggedIn in AnimalListComponent:', this.isLoggedIn);
+  });
+
     this.animalService.getAnimals().subscribe((data: Animal[]) => {
       this.animals = data;
       this.dogList = this.animals.filter(animal => animal.type.toLowerCase() === 'dog');
       this.monkeyList = this.animals.filter(animal => animal.type.toLowerCase() === 'monkey');
+      console.log('isLoggedIn in AnimalListComponent:', this.isLoggedIn);
+
 
       // Store original order
       this.originalDogList = [...this.dogList];

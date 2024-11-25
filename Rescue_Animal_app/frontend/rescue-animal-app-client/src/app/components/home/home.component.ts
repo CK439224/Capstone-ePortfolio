@@ -1,28 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AnimalService } from '../../services/animal.service';
+import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
+import { AnimalListComponent } from '../animal-list/animal-list.component';
 
 /**
  * Interface representing an Animal entity with its properties.
  */
 interface Animal {
-    _id?: string; // Optional unique identifier for the animal
-    name: string; // Name of the animal
-    type: string; // Type of the animal (e.g., Dog, Monkey)
-    gender?: string; // Optional gender of the animal
-    age: number; // Age of the animal
-    weight?: number; // Optional weight of the animal
-    acquisitionDate?: string | null; // Date when the animal was acquired
-    acquisitionCountry?: string; // Country where the animal was acquired
-    trainingStatus: string; // Current training status of the animal
-    reserved?: boolean; // Whether the animal is reserved
-    inServiceCountry?: string; // Country where the animal is in service
-    tailLength?: number; // New field
-    height?: number; // New field
-    bodyLength?: number; // New field
-    species?: string; // New field
+    _id?: string; 
+    name: string; 
+    type: string; 
+    gender?: string; 
+    age: number; 
+    weight?: number; 
+    acquisitionDate?: string | null; 
+    acquisitionCountry?: string; 
+    trainingStatus: string; 
+    reserved?: boolean; 
+    inServiceCountry?: string; 
+    tailLength?: number; 
+    height?: number; 
+    bodyLength?: number; 
+    species?: string; 
 }
 
 /**
@@ -31,38 +33,53 @@ interface Animal {
  * Displays the welcome message and allows navigation to animal-related actions.
  */
 @Component({
-    selector: 'app-home', // Indicates this is a standalone component
-    imports: [CommonModule, RouterModule], // Required Angular modules
-    templateUrl: './home.component.html', // Path to the HTML template
-    styleUrls: ['./home.component.scss'] // Path to the component's styles
+    selector: 'app-home',
+    imports: [CommonModule, RouterModule, AnimalListComponent],
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-    title = 'Welcome to the Rescue Animal Organization'; // Page title
-    animals: Animal[] = []; // Array to store animal data
-    showAnimalList = false; // Toggles the visibility of the animal list
+    title = 'Welcome to the Rescue Animal Organization'; 
+    animals: Animal[] = []; 
+    showAnimalList = false; 
+
+    currentUsername: string | null = null; 
+    isLoggedIn: boolean = false;
 
     /**
      * Constructor
-     * Injects the AnimalService for data management and Router for navigation.
+     * Injects necessary services.
      * 
      * @param animalService - Service to interact with animal data
+     * @param authService - Service to manage authentication
      * @param router - Angular Router for navigation
      */
-    constructor(private animalService: AnimalService, private router: Router) {}
+    constructor(
+        private animalService: AnimalService,
+        private authService: AuthService,
+        private router: Router
+    ) {}
 
     /**
      * Lifecycle hook that runs after component initialization.
-     * Fetches the list of animals from the service.
      */
     ngOnInit(): void {
         this.animalService.getAnimals().subscribe(
             (data) => {
-                this.animals = data; // Stores the fetched animal data
+                this.animals = data;
             },
             (error) => {
-                console.error("Error fetching data", error); // Logs errors in fetching data
+                console.error("Error fetching data", error);
             }
         );
+    
+        // Subscribe to the authentication state
+        this.authService.currentUser$.subscribe((username) => {
+            this.currentUsername = username;
+            //this.isLoggedIn = username !== null && username !== 'undefined'; // Avoid invalid usernames
+            this.isLoggedIn = this.authService.isLoggedIn();
+            console.log('Auth state updated:', { username, isLoggedIn: this.isLoggedIn });
+        });
     }
 
     /**
@@ -73,28 +90,18 @@ export class HomeComponent implements OnInit {
     }
 
     /**
-     * Logs an action to add a new animal.
-     * Placeholder for navigation or functionality to add a new animal.
-     */
-    addNewAnimal(): void {
-        console.log("Add New Animal button clicked");
-    }
-
-    /**
      * Navigates to the edit page for a specific animal.
-     * 
-     * @param id - The unique ID of the animal to be edited
      */
     editAnimal(id: string): void {
         console.log(`Navigating to edit page for ID: ${id}`);
-        this.router.navigate(['/edit-animal', id]); // Navigates to the edit-animal page with the provided ID
+        this.router.navigate(['/edit-animal', id]);
     }
 
-    onLoginClick(): void {
-        console.log('Login button clicked');
-    }
-    
-    onRegisterClick(): void {
-        console.log('Register button clicked');
+    /**
+     * Logs out the user.
+     */
+    logout(): void {
+        this.authService.logout(); 
+        console.log('User logged out');
     }
 }

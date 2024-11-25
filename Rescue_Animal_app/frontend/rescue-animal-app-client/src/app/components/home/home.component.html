@@ -1,10 +1,19 @@
 <!-- Container for the page title -->
 <div class="title-container">
     <h1>{{ title }}</h1> <!-- Dynamic title binding -->
-    <!-- Buttons for Login and Register -->
-    <div class="auth-buttons">
-        <button (click)="onLoginClick()">Login</button>
-        <button (click)="onRegisterClick()">Register</button>
+    
+    <!-- Dynamic authentication state display -->
+    <div class="auth-status">
+        <ng-container *ngIf="isLoggedIn; else loggedOut">
+            <p>Logged in as {{ currentUsername }}</p>
+            <button (click)="logout()">Logout</button>
+        </ng-container>
+        <ng-template #loggedOut>
+            <div class="auth-buttons">
+                <button routerLink="/login">Login</button>
+                <button routerLink="/register">Register</button>
+            </div>
+        </ng-template>
     </div>
 </div>
 
@@ -20,11 +29,12 @@
     <button routerLink="/current-animals">View Current Animals</button>
     
     <!-- Button to navigate to the add-animal form -->
-    <button routerLink="/add-animal" class="add-button">Add New Animal</button>
+    <button *ngIf="isLoggedIn" routerLink="/add-animal" class="add-button">Add New Animal</button>
 </div>
 
 <!-- Animal list display section -->
 <div *ngIf="showAnimalList" class="animal-grid">
+    <app-animal-list [animals]="animals"></app-animal-list>
     <!-- Header row: Displays column titles for animal attributes -->
     <div class="animal-row animal-header">
         <span>Actions</span>
@@ -44,7 +54,7 @@
     <div *ngFor="let animal of animals" class="animal-row animal-card">
         <!-- Edit button for modifying animal details -->
         <span>
-            <button [routerLink]="['/edit-animal', animal._id]">Edit</button>
+            <button *ngIf="isLoggedIn" [routerLink]="['/edit-animal', animal._id]">Edit</button>
         </span>
         
         <!-- Animal details, with default values for missing attributes -->
