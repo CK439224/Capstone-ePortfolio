@@ -26,8 +26,6 @@ Plan
 
 - To enhance the Rescue Animal program by converting it into a website, I will develop a full-stack web application that retains and expands the core functionality of the original Java program. For this project, I will use a technology stack that includes a JavaScript framework (such as Angular) for the frontend, Node.js with Express for the backend, and MongoDB as the database. This combination provides a scalable and flexible environment for both animal management and adoption processing, making the program accessible to a broader audience online.
 
----
-
 ### Category Two: Algorithms and Data Structures
 
 - **Querying and Indexing with MongoDB**  
@@ -41,8 +39,6 @@ Plan
 
 - **Optimized Query System**  
   Overall, MongoDB’s indexing and querying system provides the efficiency that custom algorithms would offer in a traditional setup, allowing us to optimize database indexing and query structuring instead. This approach achieves the same user-facing benefits—fast searches, efficient filtering, and responsive sorting—while aligning closely with MongoDB's architecture to ensure scalability and high performance.
-
----
 
 ### Category Three: Databases
 
