@@ -2,7 +2,7 @@
 # Christopher King SNHU CS-499 Capstone-ePortfolio
 
 <p align="center">
-## OVERVIEW
+OVERVIEW
 </p>
 
 Original Program
