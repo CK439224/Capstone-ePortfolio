@@ -1,5 +1,5 @@
 ![](assets/banner.png)
-# Capstone
+# Christopher King SNHU CS-499 Capstone-ePortfolio
  Capstone Projects
 
 Version 1
