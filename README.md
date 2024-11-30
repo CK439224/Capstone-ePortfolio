@@ -9,7 +9,11 @@ For my final project in the SNHU CS-499 Capstone, I demonstrated the knowledge a
 
 ---
 
+
+<p align="center">
 Original Program
+</p>
+
 [Original_Program/IT_145_Final_Project_v3.0/Final_Project_v3.0](https://github.com/CK439224/Capstone-ePortfolio.github.io/tree/main/Original_Program/IT_145_Final_Project_v3.0/Final_Project_v3.0)
 
 ---
