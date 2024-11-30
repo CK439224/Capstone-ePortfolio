@@ -18,11 +18,16 @@ Original Program
 
 ---
 
+<p align="center">
 Plan
+</p>
 
 ---
 
+<p align="center">
 Version 1
+</p>
+
 https://github.com/CK439224/Capstone_versions.git/
 
 ---
