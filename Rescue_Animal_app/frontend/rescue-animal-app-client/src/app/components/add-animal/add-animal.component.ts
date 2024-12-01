@@ -4,7 +4,7 @@ import { AnimalService, Animal } from '../../services/animal.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-/* Component metadata defining selector, template, styles, and imports */
+/* Metadata describing the component, including its template and styles */
 @Component({
     selector: 'app-add-animal',
     imports: [FormsModule, CommonModule],
@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
     styleUrls: ['./add-animal.component.scss']
 })
 export class AddAnimalComponent {
-    /* Property to bind the animal form data with default initialization */
+    /* Object to hold form data for a new animal, with default values */
     animal: Animal = {
         name: '',
         type: '',
@@ -22,6 +22,7 @@ export class AddAnimalComponent {
         acquisitionDate: '',
         acquisitionCountry: '',
         trainingStatus: '',
+        phase: '',
         reserved: false,
         inServiceCountry: '',
         tailLength: 0,
@@ -30,39 +31,49 @@ export class AddAnimalComponent {
         species: ''
     };
 
-    isMonkey: boolean = false; // State to track if "Monkey" is selected
+    // Tracks if the selected type is "Monkey"
+    isMonkey: boolean = false;
+    // Controls the visibility of the "Phase" dropdown menu
+    showPhaseDropdown: boolean = false;
 
-    /* Injecting dependencies: AnimalService for CRUD operations, Router for navigation */
-    constructor(private animalService: AnimalService, private router: Router) {}
+    /* Dependencies injected for CRUD operations and navigation */
+    constructor(private animalService: AnimalService, private router: Router) { }
 
-    // Check if the selected animal type is "Monkey"
+    /* Updates state when the animal type changes */
     onAnimalTypeChange(event: any): void {
         const selectedType = event.target.value;
         this.isMonkey = selectedType === 'Monkey';
-        
+
         if (this.isMonkey) {
-            // Initialize monkey-specific fields to default values
+            // Reset monkey-specific fields
             this.animal.tailLength = 0;
             this.animal.height = 0;
             this.animal.bodyLength = 0;
             this.animal.species = '';
         } else {
-            // Clear monkey-specific fields when type changes to something else
+            // Remove monkey-specific fields for non-monkey types
             delete this.animal.tailLength;
             delete this.animal.height;
             delete this.animal.bodyLength;
             delete this.animal.species;
         }
     }
-    
-    
-    
-    
 
-    /* Method to handle adding a new animal */
+    /* Updates visibility of the "Phase" dropdown based on training status */
+    onTrainingStatusChange(event: any): void {
+        const selectedStatus = event.target.value;
+        this.showPhaseDropdown = selectedStatus === 'In Training'; // Show dropdown if "In Training"
+
+        if (!this.showPhaseDropdown) {
+            this.animal.phase = ''; // Clears the phase if not applicable
+        }
+    }
+
+
+    /* Submits the animal data to the service and navigates back to the animal list */
     addAnimal(): void {
-        console.log('Animal data before submission:', this.animal); // Add this for debugging
-    
+        //console.log('Animal data before submission:', this.animal); // Uncomment for debugging
+
         this.animalService.addAnimal(this.animal).subscribe({
             next: (response) => {
                 console.log('Animal added successfully', response);
@@ -73,11 +84,11 @@ export class AddAnimalComponent {
             },
         });
     }
-    
-    
 
-    /* Method to handle cancel action */
+
+
+    /* Cancels the operation and navigates to the home page */
     cancel(): void {
-        this.router.navigate(['/']); // Redirects to the home or list page
+        this.router.navigate(['/']);
     }
 }

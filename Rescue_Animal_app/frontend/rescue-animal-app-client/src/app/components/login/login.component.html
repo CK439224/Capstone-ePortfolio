@@ -1,24 +1,34 @@
 <div>
+    <!-- Container for the login page title -->
     <div class="title-container">
         <h1>Login</h1>
     </div>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <!-- Email input field -->
         <label for="email">Email</label>
         <input id="email" formControlName="email" type="email" />
+        <!-- Display validation messages for email -->
         <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+            <!-- Error message if email field is required -->
             <small *ngIf="loginForm.get('email')?.errors?.['required']">Email is required.</small>
+            <!-- Error message for invalid email format -->
             <small *ngIf="loginForm.get('email')?.errors?.['email']">Invalid email format.</small>
         </div>
 
+        <!-- Password input field -->
         <label for="password">Password</label>
         <input id="password" formControlName="password" type="password" />
+        <!-- Display validation messages for password -->
         <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+            <!-- Error message if password field is required -->
             <small *ngIf="loginForm.get('password')?.errors?.['required']">Password is required.</small>
+            <!-- Error message for password length -->
             <small *ngIf="loginForm.get('password')?.errors?.['minlength']">
                 Password must be at least 6 characters long.
             </small>
         </div>
 
+        <!-- Submit button, disabled if form is invalid -->
         <button type="submit" [disabled]="loginForm.invalid">Login</button>
     </form>
 </div>

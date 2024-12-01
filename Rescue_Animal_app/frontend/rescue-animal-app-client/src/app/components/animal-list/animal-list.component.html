@@ -1,18 +1,46 @@
-<h2>Current Animals</h2>
+<div class="title-container">
+  <h2>Current Animals</h2>
+</div>
 
-<!-- Back to Homepage Button -->
-<button (click)="goToHomepage()" class="back-button">Back to Home</button>
+<!-- Navigation: Button to return to the homepage -->
+<button (click)="goToHomepage()" class="back-button">Home</button>
 
-<!-- Sorting Instruction Text -->
-<p class="sort-instruction">Click on a heading to sort.</p>
+<!-- Filter Options: Allow users to filter animals by availability -->
+<div class="button-container-buttonHighlight">
+  <!-- Filters for animals available for reservation -->
+  <button 
+    (click)="filterDogAbleToBeReserved()" 
+    [ngClass]="{'active-button': activeButton === 'dogs'}">
+    Dogs Able to be Reserved
+  </button>
+  <button 
+    (click)="filterMonkeyAbleToBeReserved()" 
+    [ngClass]="{'active-button': activeButton === 'monkeys'}">
+    Monkeys Able to be Reserved
+  </button>
+  <button 
+    (click)="filterAllAnimalsAbleToBeReserved()" 
+    [ngClass]="{'active-button': activeButton === 'all'}">
+    All Animals Able to be Reserved
+  </button>
+  <button 
+    (click)="resetFilters()" 
+    [ngClass]="{'active-button': activeButton === ''}">
+    Reset
+  </button>
+</div>
 
-<!-- Animal List Container -->
+
+
+<!-- Main Container for Displaying Animal Lists -->
 <div *ngIf="showAnimalList">
-  <!-- Dog List Section -->
-  <div class="animal-list-section">
+
+  <!-- Section for Listing Dogs -->
+  <div *ngIf="!showMonkeysOnly || showAllAnimalsAbleToBeReserved" class="animal-list-section">
     <h3>Dogs</h3>
-    <!-- Dog Table Headers -->
+    <p class="sort-instruction">Click on a heading to sort.</p>
     <div class="animal-row animal-header">
+      <!-- Headers for sorting the dog list by specific properties -->
       <span (click)="setDogSort('name')" [ngClass]="{ 'active-sort': isDogActiveSort('name') }">
         Name {{ getDogSortArrow('name') }}
       </span>
@@ -25,12 +53,18 @@
       <span (click)="setDogSort('age')" [ngClass]="{ 'active-sort': isDogActiveSort('age') }">
         Age {{ getDogSortArrow('age') }}
       </span>
+      <span (click)="setDogSort('weight')" [ngClass]="{ 'active-sort': isDogActiveSort('weight') }">
+        Weight (lb) {{ getDogSortArrow('weight') }}
+      </span>
       <span (click)="setDogSort('acquisitionCountry')" [ngClass]="{ 'active-sort': isDogActiveSort('acquisitionCountry') }">
         Acquisition Country {{ getDogSortArrow('acquisitionCountry') }}
       </span>
       <span (click)="setDogSort('trainingStatus')" [ngClass]="{ 'active-sort': isDogActiveSort('trainingStatus') }">
         Training Status {{ getDogSortArrow('trainingStatus') }}
       </span>
+      <span (click)="setDogSort('phase')" [ngClass]="{ 'active-sort': isDogActiveSort('phase') }">
+        Phase {{ getDogSortArrow('phase') }}
+    </span>
       <span (click)="setDogSort('reserved')" [ngClass]="{ 'active-sort': isDogActiveSort('reserved') }">
         Reserved {{ getDogSortArrow('reserved') }}
       </span>
@@ -39,27 +73,34 @@
       </span>
       <span>Actions</span>
     </div>
-    <!-- Dog List -->
+
+    <!-- Display individual dogs in the list -->
     <div *ngFor="let dog of dogList" class="animal-row animal-card">
       <span>{{ dog.name || 'N/A' }}</span>
       <span>{{ dog.type || 'N/A' }}</span>
       <span>{{ dog.gender || 'N/A' }}</span>
       <span>{{ dog.age !== undefined ? dog.age : 'N/A' }}</span>
+      <span>{{ dog.weight !== undefined ? dog.weight : 'N/A' }}</span>
       <span>{{ dog.acquisitionCountry || 'N/A' }}</span>
       <span>{{ dog.trainingStatus || 'N/A' }}</span>
+      <span>{{ dog.trainingStatus === 'In Training' ? dog.phase || 'N/A' : 'N/A' }}</span>
       <span>{{ dog.reserved !== undefined ? (dog.reserved ? 'Yes' : 'No') : 'N/A' }}</span>
       <span>{{ dog.inServiceCountry || 'N/A' }}</span>
       <span>
+        <!-- Allow editing for logged-in users -->
         <button *ngIf="isLoggedIn" [routerLink]="['/edit-animal', dog._id]" class="edit-button">Edit</button>
       </span>
     </div>
+
+    <!-- Placeholder message for empty dog list -->
+    <p *ngIf="dogList.length === 0">No dogs available to be reserved.</p>
   </div>
 
-  <!-- Monkey List Section -->
-  <div class="animal-list-section">
+  <!-- Section for Listing Monkeys -->
+  <div *ngIf="!showDogsOnly || showAllAnimalsAbleToBeReserved" class="animal-list-section">
     <h3>Monkeys</h3>
-    <!-- Monkey Table Headers -->
     <div class="animal-row animal-header">
+      <!-- Headers for sorting the monkey list by specific properties -->
       <span (click)="setMonkeySort('name')" [ngClass]="{ 'active-sort': isMonkeyActiveSort('name') }">
         Name {{ getMonkeySortArrow('name') }}
       </span>
@@ -72,12 +113,18 @@
       <span (click)="setMonkeySort('age')" [ngClass]="{ 'active-sort': isMonkeyActiveSort('age') }">
         Age {{ getMonkeySortArrow('age') }}
       </span>
+      <span (click)="setMonkeySort('weight')" [ngClass]="{ 'active-sort': isMonkeyActiveSort('weight') }">
+        Weight (lb) {{ getMonkeySortArrow('weight') }}
+      </span>
       <span (click)="setMonkeySort('acquisitionCountry')" [ngClass]="{ 'active-sort': isMonkeyActiveSort('acquisitionCountry') }">
         Acquisition Country {{ getMonkeySortArrow('acquisitionCountry') }}
       </span>
       <span (click)="setMonkeySort('trainingStatus')" [ngClass]="{ 'active-sort': isMonkeyActiveSort('trainingStatus') }">
         Training Status {{ getMonkeySortArrow('trainingStatus') }}
       </span>
+      <span (click)="setMonkeySort('phase')" [ngClass]="{ 'active-sort': isMonkeyActiveSort('phase') }">
+        Phase {{ getMonkeySortArrow('phase') }}
+    </span>
       <span (click)="setMonkeySort('reserved')" [ngClass]="{ 'active-sort': isMonkeyActiveSort('reserved') }">
         Reserved {{ getMonkeySortArrow('reserved') }}
       </span>
@@ -98,14 +145,16 @@
       </span>
       <span>Actions</span>
     </div>
-    <!-- Monkey List -->
+    <!-- Display individual monkeys in the list -->
     <div *ngFor="let monkey of monkeyList" class="animal-row animal-card">
       <span>{{ monkey.name || 'N/A' }}</span>
       <span>{{ monkey.type || 'N/A' }}</span>
       <span>{{ monkey.gender || 'N/A' }}</span>
       <span>{{ monkey.age !== undefined ? monkey.age : 'N/A' }}</span>
+      <span>{{ monkey.weight !== undefined ? monkey.weight : 'N/A' }}</span>
       <span>{{ monkey.acquisitionCountry || 'N/A' }}</span>
       <span>{{ monkey.trainingStatus || 'N/A' }}</span>
+      <span>{{ monkey.trainingStatus === 'In Training' ? monkey.phase || 'N/A' : 'N/A' }}</span>
       <span>{{ monkey.reserved !== undefined ? (monkey.reserved ? 'Yes' : 'No') : 'N/A' }}</span>
       <span>{{ monkey.inServiceCountry || 'N/A' }}</span>
       <span>{{ monkey.species || 'N/A' }}</span>
@@ -116,5 +165,8 @@
         <button *ngIf="isLoggedIn" [routerLink]="['/edit-animal', monkey._id]" class="edit-button">Edit</button>
       </span>
     </div>
+    
+    <!-- Placeholder message for empty monkey list -->
+    <p *ngIf="monkeyList.length === 0">No monkeys available to be reserved.</p>
   </div>
 </div>

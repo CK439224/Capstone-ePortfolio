@@ -3,13 +3,19 @@ const express = require('express');
 const router = express.Router();
 const RescueAnimal = require('../models/RescueAnimal');
 
-// Get all animals
+/**
+ * Fetch and return all animals from the database.
+ * Useful for displaying the entire inventory of rescue animals.
+ */
 router.get('/', async (req, res) => {
     const animals = await RescueAnimal.find();
     res.json(animals);
 });
 
-// routes/animals.js
+/**
+ * Fetch and return details of a specific animal by ID.
+ * This endpoint allows users to view detailed information about a particular rescue animal.
+ */
 router.get('/:id', async (req, res) => {
     try {
         const animal = await RescueAnimal.findById(req.params.id);
@@ -23,13 +29,17 @@ router.get('/:id', async (req, res) => {
 });
 
 
-// Add a new animal
+/**
+ * Add a new rescue animal to the database.
+ * Expects animal data to be sent in the request body.
+ * Validates and stores the data in the RescueAnimal model.
+ */
 router.post('/', async (req, res) => {
     try {
         const animalData = req.body;
 
-        // Log the incoming data for debugging
-        console.log('Incoming animal data:', animalData);
+        // Uncomment the following line to debug the incoming animal data.
+        // console.log('Incoming animal data:', animalData);
 
         const animal = new RescueAnimal(animalData);
         await animal.save();
@@ -40,17 +50,16 @@ router.post('/', async (req, res) => {
     }
 });
 
-
-
-
-
-
-// Update an animal
+/**
+ * Update an existing rescue animal in the database by ID.
+ * Updates only the fields provided in the request body.
+ * Ensures validation and returns the updated document.
+ */
 router.put('/:id', async (req, res) => {
     try {
         const updateData = {};
 
-        // Loop over fields and set them in updateData only if they exist in req.body
+        // Construct the update data object from provided fields in the request body.
         for (const [key, value] of Object.entries(req.body)) {
             if (value !== undefined) {
                 updateData[key] = value;
@@ -59,8 +68,8 @@ router.put('/:id', async (req, res) => {
 
         const animal = await RescueAnimal.findByIdAndUpdate(
             req.params.id,
-            { $set: updateData }, // Use $set to update fields that may have been initially undefined
-            { new: true, runValidators: true } // Ensure validation and return updated document
+            { $set: updateData }, // Only updates fields provided by the client.
+            { new: true, runValidators: true } // Ensures returned data is up-to-date and valid.
         );
 
         if (!animal) {
@@ -74,11 +83,10 @@ router.put('/:id', async (req, res) => {
     }
 });
 
-
-
-
-
-// Delete an animal
+/**
+ * Delete a rescue animal from the database by ID.
+ * Once deleted, the animal is no longer retrievable.
+ */
 router.delete('/:id', async (req, res) => {
     await RescueAnimal.findByIdAndDelete(req.params.id);
     res.json({ message: 'Animal deleted' });

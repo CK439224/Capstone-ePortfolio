@@ -1,5 +1,5 @@
 :host {
-    /* Base styles for the host element to cover the entire viewport */
+    /* Ensures the host element covers the entire viewport for full-page components */
     display: block;
     position: fixed; /* Ensures the host spans across the viewport */
     top: 0;
@@ -10,7 +10,7 @@
     padding: 0; /* Removes default padding */
     overflow: auto; /* Enables scrolling if content exceeds viewport */
 
-    /* Background styling: gradient overlay with a centered image */
+    /* Creates a gradient overlay on a centered background image for visual design */
     background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9)),
                 url('/assets/background.jpg');
     background-size: cover; /* Ensures the image covers the entire area */

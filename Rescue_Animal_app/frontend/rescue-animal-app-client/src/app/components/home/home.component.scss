@@ -1,162 +1,273 @@
 :host {
-    /* Base layout for the host element to cover the entire viewport */
+    /* Ensures the component spans and integrates seamlessly with the viewport */
     display: block;
-    position: fixed; /* Ensures the element spans the entire viewport */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* Full width of the viewport */
-    height: 100vh; /* Full height of the viewport */
-    margin: 0; /* Removes default margin */
-    padding: 0; /* Removes default padding */
-    overflow: auto; /* Enables scrolling for overflow content */
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
 
-    /* Background styling: gradient overlay with a centered image */
+    /* Applies a gradient overlay on a centered, responsive background image */
     background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9)),
-                url('/assets/background.jpg');
-    background-size: cover; /* Ensures the image covers the entire area */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents background repetition */
+        url('/assets/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
+/* Displays authentication status prominently with a clean and accessible style */
+.auth-status {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-align: right;
+    font-size: 1rem;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom styling for buttons within the authentication status section */
+.auth-status button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+/* Provides visual feedback on hover */
+.auth-status button:hover {
+    background-color: #0056b3;
+}
+
+/* Title section styled for visual impact and alignment */
 .title-container {
-    /* Styles for the title section */
-    display: flex; /* Enables flexbox for layout */
-    justify-content: center; /* Centers content horizontally */
-    align-items: center; /* Centers content vertically */
-    width: 100%; /* Full width */
-    margin-top: 20px; /* Optional: adds spacing from the top */
-    position: relative; /* Allows positioning of the buttons */
-    text-align: center; /* Centers the text */
-
-    .auth-buttons {
-        /* Styles for the Login and Register buttons */
-        position: absolute;
-        top: 50%; /* Aligns vertically with the title */
-        right: 20px; /* Adds spacing from the right edge */
-        transform: translateY(-50%); /* Centers vertically within the container */
-
-        button {
-            margin: 0 5px; /* Spacing between buttons */
-            padding: 0.5rem 1rem; /* Padding for usability */
-            font-size: 1rem; /* Readable font size */
-            cursor: pointer; /* Indicates clickable buttons */
-            background-color: #007bff; /* Blue background */
-            color: white; /* White text color */
-            border: none; /* Removes default border */
-            border-radius: 4px; /* Rounded corners */
-            transition: background-color 0.3s ease; /* Smooth hover transition */
-        }
-
-        button:hover {
-            background-color: #0056b3; /* Darker blue on hover */
-        }
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+    text-align: center;
 }
 
+/* Decorative and impactful typography for the main title */
 .title-container h1 {
-    /* Styles for the title text */
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 4rem;
     font-weight: bold;
     text-align: center;
-    color: #333;
-    text-shadow: 1px 1px 0px #999, 2px 2px 0px #888, 3px 3px 0px #777;
+    color: #3c0000;
+    text-shadow:
+        1px 1px 0px #999,
+        2px 2px 0px #888,
+        3px 3px 0px #777;
     transform: perspective(500px) rotateX(10deg);
 }
 
+/* Styling for subtitles to complement the main title */
+.subtitle {
+    font-family: 'Georgia', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #666;
+    margin-top: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+/* Container for buttons, ensuring consistent spacing and alignment */
 .button-container {
-    /* Styles for the button section */
-    display: flex; /* Enables flexbox layout */
+    display: flex;
     justify-content: center;
-    gap: 1rem; /* Adds spacing between buttons */
-    margin-top: 1rem; /* Adds spacing from the title or other content */
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
+/* Shared styling for all buttons */
 button {
-    /* Shared styling for all buttons */
-    padding: 0.5rem 1rem; /* Adds padding for better usability */
-    font-size: 1rem; /* Sets a readable font size */
-    cursor: pointer; /* Indicates the button is clickable */
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
 }
 
+/* Specific styling for the "Add New Animal" button */
 .add-button {
-    /* Specific styling for the "Add New Animal" button */
-    background-color: #28a745; /* Green background for positive action */
-    color: white; /* White text color */
-    border: none; /* Removes default border */
-    border-radius: 4px; /* Adds rounded corners */
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
 }
 
+/* Hover effect for the "Add New Animal" button */
 .add-button:hover {
-    /* Hover effect for the "Add New Animal" button */
-    background-color: #218838; /* Darker green on hover */
+    background-color: #218838;
 }
 
-/* Grid layout for the animal list */
+/* Grid layout for displaying animal data */
 .animal-grid {
-    display: grid; /* Grid layout for the list */
-    gap: 1rem; /* Adds spacing between rows */
-    margin-top: 2rem; /* Adds spacing from the button section */
+    display: grid;
+    gap: 1rem;
+    margin-top: 2rem;
 }
 
-/* Styles for the header row */
+/* Consistent layout and styling for header */
 .animal-header {
-    display: grid; /* Grid layout for the header */
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1.5fr 1.5fr 1fr 1.5fr; /* Defines column widths */
-    font-weight: bold; /* Bold text for headers */
-    text-align: center; /* Centers the header text */
-    background-color: #e0e0e0; /* Light gray background */
-    border-bottom: 2px solid #ccc; /* Adds a bottom border */
-    padding: 0.5rem 0; /* Adds vertical padding */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1.5fr 1.5fr 1fr 1.5fr;
+    font-weight: bold;
+    text-align: center;
+    background-color: #e0e0e0;
+    border-bottom: 2px solid #ccc;
+    padding: 0.5rem 0;
 }
 
-/* Styles for individual animal rows */
+/* Consistent layout and styling for data rows */
 .animal-row {
-    display: grid; /* Grid layout for animal rows */
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1.5fr 1.5fr 1fr 1.5fr; /* Matches the header layout */
-    text-align: center; /* Centers the text */
-    border-bottom: 1px solid #ddd; /* Adds a subtle border for separation */
-    padding: 0.5rem 0; /* Adds vertical padding */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1.5fr 1.5fr 1fr 1.5fr;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 0;
 }
 
+/* Styles for individual cells in the row */
 .animal-row span {
-    /* Styles for individual cells in the row */
-    padding: 0.5rem; /* Adds padding inside cells */
-    display: flex; /* Enables flexbox layout */
-    align-items: center; /* Vertically centers content */
-    justify-content: center; /* Horizontally centers content */
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* Specific styling for the "Edit" button */
 .animal-row button {
-    /* Specific styling for the "Edit" button */
-    padding: 0.3rem 0.6rem; /* Smaller padding for compact design */
-    font-size: 0.9rem; /* Slightly smaller font size */
-    cursor: pointer; /* Indicates the button is clickable */
-    background-color: #007bff; /* Blue background for the "Edit" button */
-    color: white; /* White text color */
-    border: none; /* Removes default border */
-    border-radius: 4px; /* Adds rounded corners */
+    padding: 0.3rem 0.6rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
 }
 
+/* Provides a visual cue for the user by changing the button color on hover */
 .animal-row button:hover {
-    /* Hover effect for the "Edit" button */
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0056b3;
 }
 
+/* Highlights monkey details with a distinct style for better differentiation */
 .animal-card .monkey-details {
     color: green;
     font-style: italic;
 }
 
+/* Arranges dog images in a row with spacing for better visual clarity */
 .dog-image-row {
     display: flex;
     justify-content: center;
-    gap: 15px; /* Space between images */
+    gap: 15px;
     margin-top: 20px;
 }
 
+/* Ensures consistent image size and adds visual appeal with rounded corners and a shadow */
 .dog-image {
-    width: 550px; /* Adjust image width */
+    width: 400px;
     height: auto;
-    border-radius: 8px; /* Optional: Rounded corners */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Optional: Shadow effect */
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Aligns iframe containers horizontally with spacing and ensures they are visually distinct */
+.iframe-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Creates a responsive, visually styled container for iframe content */
+.iframe-container {
+    width: 20%;
+    margin: 20px;
+    border: 2px solid #007bff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styles the title area with a light background and centered bold text for emphasis */
+.box_1_Container {
+    background-color: rgba(0, 123, 255, 0.1);
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Ensures iframe spans the full container width with no default border */
+.iframe-content {
+    width: 100%;
+    height: 500px;
+    border: none;
+}
+
+/* Provides a visually appealing container for mission statements with padding, shadow, and centering */
+.mission-statement-container {
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+    text-align: center;
+    border: 2px solid #ddd;
+}
+
+/* Styles the mission title for emphasis and accessibility with uppercase and primary color */
+.mission-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #007bff;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* Optimizes mission text readability with proper spacing and contrast */
+.mission-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Centers the organization logo with appropriate spacing above and below */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Adjusts logo size and shape for consistent presentation */
+.org-logo {
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
 }

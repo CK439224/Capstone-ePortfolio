@@ -1,36 +1,52 @@
-<!-- Container for the page title -->
-<div class="title-container">
-    <h1>{{ title }}</h1> <!-- Dynamic title binding -->
-    
-    <!-- Dynamic authentication state display -->
-    <div class="auth-status">
-        <ng-container *ngIf="isLoggedIn; else loggedOut">
-            <p>Logged in as {{ currentUsername }}</p>
-            <button (click)="logout()">Logout</button>
-        </ng-container>
-        <ng-template #loggedOut>
-            <div class="auth-buttons">
-                <button routerLink="/login">Login</button>
-                <button routerLink="/register">Register</button>
-            </div>
-        </ng-template>
-    </div>
+<!-- Displays the organization logo for branding -->
+<div class="logo-container">
+    <img src="assets/OrgLogo.png" alt="Organization Logo" class="org-logo">
 </div>
 
+<!-- Dynamic authentication state display -->
+<div class="auth-status">
+    <ng-container *ngIf="isLoggedIn; else loggedOut">
+        <!-- Displays the username and logout button if user is logged in -->
+        <p>Logged in as {{ currentUsername }}</p>
+        <button (click)="logout()">Logout</button>
+    </ng-container>
+    <ng-template #loggedOut>
+        <!-- Provides login and register options if user is not logged in -->
+        <div class="auth-buttons">
+            <button routerLink="/login">Login</button>
+            <button routerLink="/register">Register</button>
+        </div>
+    </ng-template>
+</div>
+
+<!-- Page title section with dynamic binding for the title -->
+<div class="title-container">
+    <h1>{{ title }}</h1> <!-- Main title dynamically set -->
+    <p class="subtitle">TRAINING RESCUE ANIMALS SINCE 1965</p> <!-- Static subtitle -->
+</div>
+
+<!-- Row of images showcasing various dogs -->
 <div class="dog-image-row">
     <img src="assets/Dog1.png" alt="Dog1" class="dog-image" />
     <img src="assets/Dog2.png" alt="Dog2" class="dog-image" />
     <img src="assets/Dog3.png" alt="Dog3" class="dog-image" />
 </div>
 
-<!-- Button section for navigation -->
+<!-- Navigation buttons for viewing or adding animals -->
 <div class="button-container">
-    <!-- Button to navigate to the current animals list -->
+    <!-- Navigates to the current animal listings page -->
     <button routerLink="/current-animals">View Current Animals</button>
-    
-    <!-- Button to navigate to the add-animal form -->
+
+    <!-- Allows logged-in users to navigate to the form for adding a new animal -->
     <button *ngIf="isLoggedIn" routerLink="/add-animal" class="add-button">Add New Animal</button>
 </div>
+
+<!-- Section displaying the organization's mission statement -->
+<div class="mission-statement-container" *ngIf="missionStatement">
+    <h2 class="mission-title">Our Mission</h2>
+    <p class="mission-text">{{ missionStatement }}</p>
+</div>
+
 
 <!-- Animal list display section -->
 <div *ngIf="showAnimalList" class="animal-grid">
@@ -56,7 +72,7 @@
         <span>
             <button *ngIf="isLoggedIn" [routerLink]="['/edit-animal', animal._id]">Edit</button>
         </span>
-        
+
         <!-- Animal details, with default values for missing attributes -->
         <span>{{ animal.name || 'N/A' }}</span> <!-- Animal name -->
         <span>{{ animal.type || 'N/A' }}</span> <!-- Animal type -->

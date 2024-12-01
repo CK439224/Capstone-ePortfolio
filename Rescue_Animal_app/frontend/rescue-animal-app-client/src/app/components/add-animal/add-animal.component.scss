@@ -1,5 +1,5 @@
 :host {
-    /* Full-screen layout with a gradient overlay and centered background image */
+    /* Creates a full-screen layout with a gradient overlay and a centered background image */
     display: block;
     position: fixed;
     top: 0;
@@ -9,6 +9,7 @@
     margin: 0;
     padding: 0;
     overflow: auto;
+    /* Background consists of a semi-transparent white gradient overlaid on an image */
     background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9)), 
                 url('/assets/background.jpg');
     background-size: cover;
@@ -17,7 +18,7 @@
 }
 
 .form-container {
-    /* Center-aligned form container with vertical layout */
+    /* Aligns child elements in a vertical layout and centers them horizontally */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,26 +27,26 @@
 }
 
 form {
-    /* Form width constraints for better layout */
+    /* Sets maximum width for form for better readability on different devices */
     width: 100%;
     max-width: 400px;
 }
 
 .form-group {
-    /* Vertical alignment of label and input */
+    /* Groups label and input elements for better vertical alignment */
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
 }
 
 label {
-    /* Styling for labels */
+    /* Provides spacing and emphasizes the label text for accessibility */
     margin-bottom: 5px;
     font-weight: bold;
 }
 
 .form-control {
-    /* Input field styling for consistency */
+    /* Standardizes input field appearance for consistency across browsers */
     width: 100%;
     padding: 10px;
     font-size: 16px;
@@ -54,7 +55,7 @@ label {
 
 .submit-button,
 .cancel-button {
-    /* Shared button styles */
+    /* Shared button styling for consistency */
     width: 100%;
     padding: 10px;
     margin-top: 10px;
@@ -63,21 +64,21 @@ label {
 }
 
 #reserved {
-    /* Checkbox-specific styling */
+    /* Custom dimensions for checkbox input */
     width: 25px;
     height: 25px;
     cursor: pointer;
 }
 
 .submit-button {
-    /* Save button styling */
+    /* Styling for the save button to indicate action and priority */
     background-color: #4CAF50;
     color: white;
     border: none;
 }
 
 .cancel-button {
-    /* Cancel button styling */
+    /* Styling for the cancel button to indicate caution */
     background-color: #f44336;
     color: white;
     border: none;

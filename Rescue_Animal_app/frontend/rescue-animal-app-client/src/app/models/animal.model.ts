@@ -14,9 +14,9 @@ export interface Animal {
   acquisitionDate?: string; // Optional date when the animal was acquired, formatted as "yyyy-MM-dd"
   acquisitionCountry?: string; // Optional country where the animal was acquired
   trainingStatus: string; // The current training status of the animal (e.g., In Training, Training Completed)
+  phase?: string;
   reserved?: boolean; // Optional flag indicating if the animal is reserved
   inServiceCountry?: string; // Optional country where the animal is currently in service
-  adoptionStatus?: string; // Optional adoption status (e.g., Adopted, Available, Pending)
   tailLength?: number; // Optional field
   height?: number; // Optional field
   bodyLength?: number; // Optional field

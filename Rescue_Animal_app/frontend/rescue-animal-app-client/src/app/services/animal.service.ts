@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
 
 /**
  * Interface representing the structure of an Animal entity.
- * This is used across the application and API interactions.
+ * Defines the expected data model for animal-related functionality.
  */
 export interface Animal {
     _id?: string; // Optional unique identifier for the animal
@@ -19,6 +19,7 @@ export interface Animal {
     acquisitionDate?: string | null; // Optional date of acquisition (null if not available)
     acquisitionCountry?: string; // Optional country of acquisition
     trainingStatus: string; // Training status of the animal
+    phase?: string;
     reserved?: boolean; // Optional flag indicating if the animal is reserved
     inServiceCountry?: string; // Optional country where the animal is in service
     adoptionStatus?: string; // Optional adoption status (e.g., Adopted, Available)
@@ -29,28 +30,27 @@ export interface Animal {
 }
 
 /**
- * Service to manage API interactions for Animal data.
- * Provides CRUD operations and additional utility methods.
+ * Service for managing Animal API interactions.
+ * Encapsulates CRUD operations and utility methods.
  */
 @Injectable({
-    providedIn: 'root' // Makes the service available throughout the app
+    providedIn: 'root' // Registers this service for the app's root injector
 })
 export class AnimalService {
-    private apiUrl = 'http://localhost:3000/api/animals'; // Base URL for the API
+    private apiUrl = 'http://localhost:3000/api/animals'; // Base endpoint for animal-related API calls
 
     /**
-     * Constructor
-     * Injects the HttpClient for making HTTP requests.
+     * Initializes the service with Angular's HttpClient.
      * 
-     * @param http - Angular's HttpClient for API calls
+     * @param http - Provides HTTP methods for RESTful communication
      */
     constructor(private http: HttpClient) {}
 
     /**
-     * Fetches a list of all animals from the API.
-     * Formats the `acquisitionDate` to "yyyy-MM-dd" format for consistency.
+     * Retrieves all animals from the backend API.
+     * Formats acquisition dates into "yyyy-MM-dd" format for consistent display.
      * 
-     * @returns An observable containing an array of animals.
+     * @returns Observable emitting an array of animals
      */
     getAnimals(): Observable<Animal[]> {
         return this.http.get<Animal[]>(this.apiUrl).pipe(
@@ -67,10 +67,10 @@ export class AnimalService {
     }
 
     /**
-     * Adds a new animal to the database.
+     * Sends a new animal record to the backend API for persistence.
      * 
-     * @param animal - The animal object to be added.
-     * @returns An observable containing the added animal.
+     * @param animal - Data object representing the new animal
+     * @returns Observable emitting the created animal record
      */
     addAnimal(animal: Animal): Observable<Animal> {
         return this.http.post<Animal>(`${this.apiUrl}`, animal);

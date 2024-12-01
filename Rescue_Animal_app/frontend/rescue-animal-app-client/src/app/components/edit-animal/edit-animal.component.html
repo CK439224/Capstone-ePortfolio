@@ -1,190 +1,130 @@
 <div class="form-container">
-    <!-- Form for editing an animal -->
-    <form (ngSubmit)="saveAnimal()">
-      <!-- Input field for animal name -->
+  <!-- Form for editing an animal's details; purpose is to allow modification of an animal's data in the system -->
+  <form (ngSubmit)="saveAnimal()">
+    <!-- Field to input or edit the animal's name -->
+    <div class="form-group">
+      <label for="animalName">Name</label>
+      <input type="text" id="animalName" name="animalName" [(ngModel)]="animal.name" class="form-control" />
+    </div>
+
+    <!-- Dropdown for selecting animal type -->
+    <div class="form-group">
+      <label for="animalType">Type</label>
+      <select id="animalType" name="animalType" [(ngModel)]="animal.type" class="form-control"
+        (change)="onAnimalTypeChange($event)">
+        <option value="Dog">Dog</option>
+        <option value="Monkey">Monkey</option>
+      </select>
+    </div>
+
+    <!-- Dropdown for selecting animal gender -->
+    <div class="form-group">
+      <label for="animalGender">Gender</label>
+      <select id="animalGender" name="animalGender" [(ngModel)]="animal.gender" class="form-control">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+    </div>
+
+    <!-- Field to input the age of the animal in years -->
+    <div class="form-group">
+      <label for="animalAge">Age</label>
+      <input type="number" id="animalAge" name="animalAge" [(ngModel)]="animal.age" class="form-control" />
+    </div>
+
+    <!-- Field to input the weight of the animal in pounds -->
+    <div class="form-group">
+      <label for="animalWeight">Weight</label>
+      <input type="number" id="animalWeight" name="animalWeight" [(ngModel)]="animal.weight" class="form-control" />
+    </div>
+
+    <!-- Field to select the acquisition date of the animal -->
+    <div class="form-group">
+      <label for="acquisitionDate">Acquisition Date</label>
+      <input type="date" id="acquisitionDate" name="acquisitionDate" [(ngModel)]="animal.acquisitionDate"
+        class="form-control" />
+    </div>
+
+    <!-- Field to input the country where the animal was acquired -->
+    <div class="form-group">
+      <label for="acquisitionCountry">Acquisition Country</label>
+      <input type="text" id="acquisitionCountry" name="acquisitionCountry" [(ngModel)]="animal.acquisitionCountry"
+        class="form-control" />
+    </div>
+
+    <!-- Dropdown to select the current training status of the animal -->
+    <div class="form-group">
+      <label for="trainingStatus">Training Status</label>
+      <select id="trainingStatus" name="trainingStatus" [(ngModel)]="animal.trainingStatus" class="form-control"
+        (change)="onTrainingStatusChange($event)">
+        <option value="Awaiting Training">Awaiting Training</option>
+        <option value="In Training">In Training</option>
+        <option value="Training Completed">Training Completed</option>
+        <option value="Farm">Farm</option>
+      </select>
+    </div>
+
+    <!-- Additional dropdown for selecting the training phase; visible only when applicable -->
+    <div class="form-group" *ngIf="showPhaseDropdown">
+      <label for="phase">Phase</label>
+      <select id="phase" name="phase" [(ngModel)]="animal.phase" class="form-control">
+        <option value="Phase I">Phase I</option>
+        <option value="Phase II">Phase II</option>
+        <option value="Phase III">Phase III</option>
+        <option value="Phase IV">Phase IV</option>
+        <option value="Phase V">Phase V</option>
+      </select>
+    </div>
+
+    <!-- Checkbox to mark the animal as reserved -->
+    <div class="form-group">
+      <label for="reserved">Reserved</label>
+      <input type="checkbox" id="reserved" name="reserved" [(ngModel)]="animal.reserved" />
+    </div>
+
+    <!-- Field to input the country where the animal is currently in service -->
+    <div class="form-group">
+      <label for="inServiceCountry">In-Service Country</label>
+      <input type="text" id="inServiceCountry" name="inServiceCountry" [(ngModel)]="animal.inServiceCountry"
+        class="form-control" />
+    </div>
+
+    <!-- Fields specific to monkeys, displayed only when the animal type is Monkey -->
+    <div *ngIf="isMonkey">
+      <!-- Field to input the length of the monkey's tail in centimeters -->
       <div class="form-group">
-        <label for="animalName">Name</label>
-        <input
-          type="text"
-          id="animalName"
-          name="animalName"
-          [(ngModel)]="animal.name"
-          class="form-control"
-        />
+        <label for="tailLength">Tail Length (cm)</label>
+        <input type="number" id="tailLength" name="tailLength" [(ngModel)]="animal.tailLength" class="form-control" />
       </div>
-  
-      <!-- Dropdown for selecting animal type -->
+
+      <!-- Field to input the height of the monkey in centimeters -->
       <div class="form-group">
-        <label for="animalType">Type</label>
-        <select
-          id="animalType"
-          name="animalType"
-          [(ngModel)]="animal.type"
-          class="form-control"
-          (change)="onAnimalTypeChange($event)"
-        >
-          <option value="Dog">Dog</option>
-          <option value="Monkey">Monkey</option>
+        <label for="height">Height (cm)</label>
+        <input type="number" id="height" name="height" [(ngModel)]="animal.height" class="form-control" />
+      </div>
+
+      <!-- Field to input the body length of the monkey in centimeters -->
+      <div class="form-group">
+        <label for="bodyLength">Body Length (cm)</label>
+        <input type="number" id="bodyLength" name="bodyLength" [(ngModel)]="animal.bodyLength" class="form-control" />
+      </div>
+
+      <!-- Dropdown for selecting species -->
+      <div class="form-group" *ngIf="isMonkey">
+        <label for="species">Species</label>
+        <select id="species" name="species" [(ngModel)]="animal.species" class="form-control">
+          <option value="Capuchin">Capuchin</option>
+          <option value="Guenon">Guenon</option>
+          <option value="Macaque">Macaque</option>
+          <option value="Marmoset">Marmoset</option>
+          <option value="Squirrel Monkey">Squirrel Monkey</option>
+          <option value="Tamarin">Tamarin</option>
         </select>
       </div>
-  
-      <!-- Dropdown for selecting animal gender -->
-      <div class="form-group">
-        <label for="animalGender">Gender</label>
-        <select
-          id="animalGender"
-          name="animalGender"
-          [(ngModel)]="animal.gender"
-          class="form-control"
-        >
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-        </select>
-      </div>
-  
-      <!-- Input field for animal age -->
-      <div class="form-group">
-        <label for="animalAge">Age</label>
-        <input
-          type="number"
-          id="animalAge"
-          name="animalAge"
-          [(ngModel)]="animal.age"
-          class="form-control"
-        />
-      </div>
-  
-      <!-- Input field for animal weight -->
-      <div class="form-group">
-        <label for="animalWeight">Weight</label>
-        <input
-          type="number"
-          id="animalWeight"
-          name="animalWeight"
-          [(ngModel)]="animal.weight"
-          class="form-control"
-        />
-      </div>
-  
-      <!-- Date picker for acquisition date -->
-      <div class="form-group">
-        <label for="acquisitionDate">Acquisition Date</label>
-        <input
-          type="date"
-          id="acquisitionDate"
-          name="acquisitionDate"
-          [(ngModel)]="animal.acquisitionDate"
-          class="form-control"
-        />
-      </div>
-  
-      <!-- Input field for acquisition country -->
-      <div class="form-group">
-        <label for="acquisitionCountry">Acquisition Country</label>
-        <input
-          type="text"
-          id="acquisitionCountry"
-          name="acquisitionCountry"
-          [(ngModel)]="animal.acquisitionCountry"
-          class="form-control"
-        />
-      </div>
-  
-      <!-- Dropdown for selecting training status -->
-      <div class="form-group">
-        <label for="trainingStatus">Training Status</label>
-        <select
-          id="trainingStatus"
-          name="trainingStatus"
-          [(ngModel)]="animal.trainingStatus"
-          class="form-control"
-        >
-          <option value="Awaiting Training">Awaiting Training</option>
-          <option value="In Training">In Training</option>
-          <option value="Training Completed">Training Completed</option>
-        </select>
-      </div>
-  
-      <!-- Checkbox for reserved status -->
-      <div class="form-group">
-        <label for="reserved">Reserved</label>
-        <input
-          type="checkbox"
-          id="reserved"
-          name="reserved"
-          [(ngModel)]="animal.reserved"
-        />
-      </div>
-  
-      <!-- Input field for in-service country -->
-      <div class="form-group">
-        <label for="inServiceCountry">In-Service Country</label>
-        <input
-          type="text"
-          id="inServiceCountry"
-          name="inServiceCountry"
-          [(ngModel)]="animal.inServiceCountry"
-          class="form-control"
-        />
-      </div>
-  
-      <!-- Additional fields for Monkey -->
-      <div *ngIf="isMonkey">
-        <div class="form-group">
-          <label for="tailLength">Tail Length (cm)</label>
-          <input
-            type="number"
-            id="tailLength"
-            name="tailLength"
-            [(ngModel)]="animal.tailLength"
-            class="form-control"
-          />
-        </div>
-  
-        <div class="form-group">
-          <label for="height">Height (cm)</label>
-          <input
-            type="number"
-            id="height"
-            name="height"
-            [(ngModel)]="animal.height"
-            class="form-control"
-          />
-        </div>
-  
-        <div class="form-group">
-          <label for="bodyLength">Body Length (cm)</label>
-          <input
-            type="number"
-            id="bodyLength"
-            name="bodyLength"
-            [(ngModel)]="animal.bodyLength"
-            class="form-control"
-          />
-        </div>
-  
-        <!-- Dropdown for selecting species -->
-        <div class="form-group" *ngIf="isMonkey">
-            <label for="species">Species</label>
-            <select
-                id="species"
-                name="species"
-                [(ngModel)]="animal.species"
-                class="form-control"
-            >
-                <option value="Capuchin">Capuchin</option>
-                <option value="Guenon">Guenon</option>
-                <option value="Macaque">Macaque</option>
-                <option value="Marmoset">Marmoset</option>
-                <option value="Squirrel Monkey">Squirrel Monkey</option>
-                <option value="Tamarin">Tamarin</option>
-            </select>
-        </div>
-      </div>
-  
-      <!-- Submit and cancel buttons -->
-      <button type="submit" class="submit-button">Save</button>
-      <button type="button" class="cancel-button" (click)="cancel()">Cancel</button>
-    </form>
-  </div>
-  
+    </div>
+
+    <!-- Buttons to save changes or cancel the form -->
+    <button type="submit" class="submit-button">Save</button>
+    <button type="button" class="cancel-button" (click)="cancel()">Cancel</button>
+  </form>
+</div>
