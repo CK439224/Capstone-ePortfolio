@@ -13,9 +13,11 @@ For my final project in the SNHU CS-499 Capstone, I demonstrated the knowledge a
 Code Review
 </p>
 
+<p align="center">
 https://youtu.be/SGY3JVHHWBs
+</p>
 
-<img src="assets/Code_Review.png" alt="Alt Text" width="800" height="auto">
+https://youtu.be/SGY3JVHHWBs
 
 <div align="center">
   <img src="assets/Code_Review.png" alt="Alt Text" width="800" height="auto">
