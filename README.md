@@ -17,7 +17,9 @@ https://youtu.be/SGY3JVHHWBs
 
 https://youtu.be/SGY3JVHHWBs?si=R4Pq7RpnpSpEnNno
 
-https://img.youtu.be/SGY3JVHHWBs.jpg
+https://www.youtube-nocookie.com/watch?v=SGY3JVHHWBs&t=8s
+
+https://jpg.youtube.com/watch?v=SGY3JVHHWBs&t=8s.jpg
 
 ---
 
