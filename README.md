@@ -17,7 +17,7 @@ https://youtu.be/SGY3JVHHWBs
 
 https://youtu.be/SGY3JVHHWBs?si=R4Pq7RpnpSpEnNno
 
-https://youtu.be/SGY3JVHHWBs.jpg
+https://img.youtu.be/SGY3JVHHWBs.jpg
 
 ---
 
