@@ -15,9 +15,7 @@ Code Review
 
 https://youtu.be/SGY3JVHHWBs
 
-https://youtu.be/SGY3JVHHWBs?si=R4Pq7RpnpSpEnNno
-
-https://jpg.youtu.be/SGY3JVHHWBs.jpg
+![](assets/Code_Review.png)
 
 ---
 
