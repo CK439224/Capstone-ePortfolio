@@ -17,7 +17,7 @@ https://youtu.be/SGY3JVHHWBs
 
 ![](assets/Code_Review.png)
 
-<img src="assets/Code_Review.png" alt="Alt Text" width="300" height="200">
+<img src="assets/Code_Review.png" alt="Alt Text" width="800" height="800">
 
 ---
 
