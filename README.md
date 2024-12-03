@@ -1,4 +1,7 @@
-![](assets/banner.png)
+<div align="center">
+  <img src="assets/banner.png" alt="Alt Text" width="800" height="auto">
+</div>
+
 # Christopher King SNHU CS-499 Capstone-ePortfolio
 
 <p align="center">
