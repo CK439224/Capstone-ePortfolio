@@ -17,6 +17,10 @@ https://youtu.be/SGY3JVHHWBs
 
 <img src="assets/Code_Review.png" alt="Alt Text" width="800" height="auto">
 
+<div align="center">
+  <img src="assets/Code_Review.png" alt="Alt Text" width="800" height="auto">
+</div>
+
 ---
 
 <p align="center">
