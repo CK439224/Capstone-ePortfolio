@@ -15,9 +15,7 @@ Code Review
 
 https://youtu.be/SGY3JVHHWBs
 
-![](assets/Code_Review.png)
-
-<img src="assets/Code_Review.png" alt="Alt Text" width="800" height="400">
+<img src="assets/Code_Review.png" alt="Alt Text" width="800" height="auto">
 
 ---
 
