@@ -41,6 +41,7 @@ These are screenshots of the original program:
 </div>
 
 <figure align="center">
+  <figcaption>Menu Screenshot</figcaption>
   <img src="assets/Orig_Program_Menu.png" alt="Menu Screenshot" width="400">
   <figcaption>Menu Screenshot</figcaption>
 </figure>
