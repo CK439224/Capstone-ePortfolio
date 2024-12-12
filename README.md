@@ -34,7 +34,6 @@ Original Program
 
 These are screenshots of the original program:
 
-<div align="center">
 <figure align="center">
   <figcaption>Menu Screenshot</figcaption>
   <img src="assets/Orig_Program_Menu.png" alt="Menu Screenshot" width="400">
@@ -47,7 +46,6 @@ These are screenshots of the original program:
   <figcaption>Intake Screenshot</figcaption>
   <img src="assets/Orig_Program_Intake.png" alt="Intake Screenshot" width="400">
 </figure>
-</div>
 
 ---
 
