@@ -34,8 +34,8 @@ Original Program
 
 <div align="center">
   <img src="assets/Orig_Program_Menu.png" alt="Alt Text" width="400" height="auto">
+  <img src="assets/Orig_Program_List.png" alt="Alt Text" width="400" height="auto">
   <img src="assets/Orig_Program_Intake.png" alt="Alt Text" width="400" height="auto">
-  <img src="assets/Orig_Program_List.png" alt="Alt Text" width="800" height="auto">
 </div>
 
 ---
