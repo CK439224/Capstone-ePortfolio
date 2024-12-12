@@ -43,15 +43,14 @@ These are screenshots of the original program:
 <figure align="center">
   <figcaption>Menu Screenshot</figcaption>
   <img src="assets/Orig_Program_Menu.png" alt="Menu Screenshot" width="400">
-  <figcaption>Menu Screenshot</figcaption>
 </figure>
 <figure align="center">
-  <img src="assets/Orig_Program_List.png" alt="List Screenshot" width="400">
   <figcaption>List Screenshot</figcaption>
+  <img src="assets/Orig_Program_List.png" alt="List Screenshot" width="400">
 </figure>
 <figure align="center">
-  <img src="assets/Orig_Program_Intake.png" alt="Intake Screenshot" width="400">
   <figcaption>Intake Screenshot</figcaption>
+  <img src="assets/Orig_Program_Intake.png" alt="Intake Screenshot" width="400">
 </figure>
 
 ---
