@@ -40,6 +40,19 @@ These are screenshots of the original program:
   <img src="assets/Orig_Program_Intake.png" alt="Alt Text" width="400" height="auto">
 </div>
 
+<figure align="center">
+  <img src="assets/Orig_Program_Menu.png" alt="Menu Screenshot" width="400">
+  <figcaption>Menu Screenshot</figcaption>
+</figure>
+<figure align="center">
+  <img src="assets/Orig_Program_List.png" alt="List Screenshot" width="400">
+  <figcaption>List Screenshot</figcaption>
+</figure>
+<figure align="center">
+  <img src="assets/Orig_Program_Intake.png" alt="Intake Screenshot" width="400">
+  <figcaption>Intake Screenshot</figcaption>
+</figure>
+
 ---
 
 <p align="center">
