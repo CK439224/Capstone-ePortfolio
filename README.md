@@ -34,12 +34,6 @@ Original Program
 
 These are screenshots of the original program:
 
-<div align="center">
-  <img src="assets/Orig_Program_Menu.png" alt="Alt Text" width="400" height="auto">
-  <img src="assets/Orig_Program_List.png" alt="Alt Text" width="400" height="auto">
-  <img src="assets/Orig_Program_Intake.png" alt="Alt Text" width="400" height="auto">
-</div>
-
 <figure align="center">
   <figcaption>Menu Screenshot</figcaption>
   <img src="assets/Orig_Program_Menu.png" alt="Menu Screenshot" width="400">
