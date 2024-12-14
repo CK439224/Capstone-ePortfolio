@@ -200,6 +200,8 @@ https://github.com/CK439224/Capstone_versions.git/
 Video of Enhanced Project
 </p>
 
+Click on the link below to see a short video of my completed project.
+
 <div align="center">
   <img src="assets/Enhanced_Home.png" alt="Alt Text" width="800" height="auto">
 </div>
