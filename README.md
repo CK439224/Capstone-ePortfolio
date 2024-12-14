@@ -32,6 +32,79 @@ https://youtu.be/SGY3JVHHWBs
 Original Program
 </p>
 
+# Grazioso Salvare Specification Document
+
+## Overview
+Grazioso Salvare primarily uses dogs as search and rescue animals but plans to train monkeys for similar purposes. 
+- Dogs initially receive an "intake" status before beginning training. 
+- As training progresses, their status changes through five phases: **Phase I to Phase V**. 
+- Dogs that successfully complete training gain **"in-service"** status and are designated as Rescue Animals. 
+- Those unable to complete training are assigned **"farm"** status, indicating they will retire on a Grazioso Salvare farm.
+
+## Animals
+When acquiring a dog, Grazioso Salvare tracks the following details:
+- **Name**
+- **Breed**
+- **Gender**
+- **Age**
+- **Weight**
+- **Acquisition date and location**
+
+Additionally, the organization records:
+- The dog's training status.
+- If the dog is "in-service," its assigned country and reservation status.
+
+## Special Considerations for Monkeys
+The organization is expanding its system to accommodate tracking monkeys. The following monkey species are eligible for training:
+- **Capuchin**
+- **Guenon**
+- **Macaque**
+- **Marmoset**
+- **Squirrel Monkey**
+- **Tamarin**
+
+Unique attributes for monkeys include:
+- **Tail length**
+- **Height**
+- **Body length**
+- **Species**
+
+## Required Functionality
+
+### Monkey Class
+- Extend the `RescueAnimal` class.
+- Include monkey-specific attributes.
+- Implement accessor (getter) and mutator (setter) methods for all attributes.
+
+### Driver Class
+Add a **menu-driven loop** that:
+1. Displays the provided menu.
+2. Collects and validates user input.
+3. Executes actions based on user selections.
+
+#### Implement the following methods:
+- **Intake a new dog**:
+  - Prompt for and validate user inputs.
+  - Populate dog attributes.
+  - Add the dog to an `ArrayList`.
+
+- **Intake a new monkey**:
+  - Validate inputs, including name and species.
+  - Populate monkey attributes.
+  - Add the monkey to an `ArrayList`.
+
+- **Reserve an animal**:
+  - Identify animals matching user criteria from the `ArrayList`.
+  - Update the `reserved` status if a match is found.
+  - Provide feedback if no match exists.
+
+- **Display animal information**:
+  - Print lists of:
+    - All dogs.
+    - All monkeys.
+    - Animals that are "in-service" and available (not reserved).
+
+
 [Original_Program/IT_145_Final_Project_v3.0/Final_Project_v3.0](https://github.com/CK439224/Capstone-ePortfolio.github.io/tree/main/Original_Program/IT_145_Final_Project_v3.0/Final_Project_v3.0)
 
 These are screenshots of the original program:
