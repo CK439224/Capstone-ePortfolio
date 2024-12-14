@@ -196,5 +196,14 @@ Version 1
 https://github.com/CK439224/Capstone_versions.git/
 
 ---
+<p align="center">
+Video of Enhanced Project
+</p>
 
+<div align="center">
+  <img src="assets/Enhanced_Home.png" alt="Alt Text" width="800" height="auto">
+</div>
 
+<p align="center">
+[https://youtu.be/SGY3JVHHWBs](https://youtu.be/FC-kc5ZNhuk)
+</p>
