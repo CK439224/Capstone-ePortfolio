@@ -5,6 +5,22 @@
 # Christopher King SNHU CS-499 Capstone-ePortfolio
 
 <p align="center">
+Professional Self-Assessment
+</p>
+
+The completion of my coursework and the development of my ePortfolio have been pivotal in showcasing my strengths, shaping my professional goals and values, and preparing me to thrive in the field of computer science. Throughout the program, I have honed technical skills and cultivated a mindset geared towards problem-solving and innovation. These experiences have not only strengthened my employability but have also solidified my commitment to continuous learning and excellence in this dynamic field.
+
+One of the most transformative aspects of my education has been **communicating with stakeholders**. In various projects, including my capstone, I practiced presenting technical concepts to non-technical audiences, tailoring my approach to ensure clarity and engagement. This skill is vital in bridging the gap between technical teams and business stakeholders, and it has prepared me to be an effective advocate for technical solutions in real-world scenarios.
+
+My understanding of **data structures and algorithms** has been a cornerstone of my problem-solving abilities. For instance, designing efficient algorithms to handle complex operations in my projects demonstrated my ability to optimize performance and scalability. These skills were further enhanced by applying them in practical settings, such as optimizing search functionalities in database-driven applications.
+
+In **software engineering and database management**, I have demonstrated proficiency in full-stack development, transitioning standalone applications into robust, scalable solutions. My capstone project highlights my ability to integrate technologies like MongoDB and implement design patterns such as the Factory Method to enhance code maintainability and extensibility. These experiences reflect my ability to design and implement systems that meet user needs while adhering to best practices in software development.
+
+The importance of **security** became increasingly apparent as I advanced through the program. Early projects laid the foundation for understanding secure coding practices, while later work emphasized the integration of authentication and authorization mechanisms, such as using JWTs for secure user sessions. My capstone underscored the need to consider security throughout the software development lifecycle, a lesson I will carry into my professional career.
+
+---
+
+<p align="center">
 OVERVIEW
 </p>
 
