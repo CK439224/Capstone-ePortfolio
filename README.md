@@ -156,6 +156,18 @@ To enhance the Rescue Animal program in alignment with database management best 
 - **Data Validation**  
   Data validation will focus on ensuring accurate and complete entries within the `Animals` collection. Required fields like `name` and `type` will be enforced, and `reservationStatus` will use predefined values (`Available`, `Reserved`, `Pending`) to maintain data consistency and reliability.
 
+---
+
+# Project Reflection
+
+Starting this project early allowed me to maintain a steady pace and gave me extra time to address potential challenges. This approach proved beneficial as I transitioned the original standalone Java application into a full-stack application, showcasing an enhanced understanding of software design and development. I made significant improvements, including better encapsulation and the implementation of design patterns, such as the Factory Method in `RescueAnimal.java`. Additionally, I integrated MongoDB for database functionality, enabling seamless data handling between the front-end and back-end.
+
+While I have achieved many milestones, such as creating an intuitive user interface and establishing smooth interactions with MongoDB, I recognized that there was still more to do. I planned to refine the front-end further, enhance database interactions to support additional features, and improve the filters available in the animal list. Furthermore, I aimed to restrict user registration by requiring approval or limiting it to specific individuals, ensuring better control over access.
+
+I believe my project demonstrates evidence of improvement across all key areas. However, in hindsight, I realize that I should have prioritized security measures throughout the project rather than treating it as a final step. Although I have implemented some security measures, I still had to fine-tune the existing ones and introduce additional safeguards to ensure the application is robust and secure. 
+
+This reflection highlights both my progress and my commitment to continuously improving my work, leveraging the knowledge and skills I’ve gained throughout my academic journey.
+
 
 ---
 
