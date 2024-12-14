@@ -29,10 +29,10 @@ https://youtu.be/SGY3JVHHWBs
 ---
 
 <p align="center">
-Original Program
+Original Program Guidelines, Code, and Screenshots
 </p>
 
-# Grazioso Salvare Specification Document
+# Grazioso Salvare Specification
 
 ## Overview
 Grazioso Salvare primarily uses dogs as search and rescue animals but plans to train monkeys for similar purposes. 
