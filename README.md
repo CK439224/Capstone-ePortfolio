@@ -16,6 +16,8 @@ For my final project in the SNHU CS-499 Capstone, I demonstrated the knowledge a
 Code Review
 </p>
 
+I conducted a code review addressing three key computer science categories: software engineering and design, algorithms and data structures, and databases. The code review was submitted as a video walkthrough where I analyzed existing code for weaknesses, limitations, and vulnerabilities, while proposing enhancements to improve functionality, structure, and efficiency.
+
 <div align="center">
   <img src="assets/Code_Review.png" alt="Alt Text" width="800" height="auto">
 </div>
