@@ -199,5 +199,5 @@ Click on the link below to see a short video of my completed project.
 </div>
 
 <p align="center">
-[https://youtu.be/SGY3JVHHWBs](https://youtu.be/FC-kc5ZNhuk)
+  https://youtu.be/FC-kc5ZNhuk
 </p>
