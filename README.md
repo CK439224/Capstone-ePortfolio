@@ -188,14 +188,6 @@ This reflection highlights both my progress and my commitment to continuously im
 
 
 ---
-
-<p align="center">
-Version 1
-</p>
-
-https://github.com/CK439224/Capstone_versions.git/
-
----
 <p align="center">
 Video of Enhanced Project
 </p>
