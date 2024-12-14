@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/banner.png" alt="Alt Text" width="800" height="auto">
+  <img src="assets/Enhanced_Home.png" alt="Alt Text" width="800" height="auto">
 </div>
 
 # Christopher King SNHU CS-499 Capstone-ePortfolio
