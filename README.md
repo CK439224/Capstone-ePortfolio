@@ -158,7 +158,9 @@ To enhance the Rescue Animal program in alignment with database management best 
 
 ---
 
-# Project Reflection
+<p align="center">
+Project Reflection
+</p>
 
 Starting this project early allowed me to maintain a steady pace and gave me extra time to address potential challenges. This approach proved beneficial as I transitioned the original standalone Java application into a full-stack application, showcasing an enhanced understanding of software design and development. I made significant improvements, including better encapsulation and the implementation of design patterns, such as the Factory Method in `RescueAnimal.java`. Additionally, I integrated MongoDB for database functionality, enabling seamless data handling between the front-end and back-end.
 
