@@ -11,7 +11,7 @@
 
 [OVERVIEW](#overview)\
 [Code Review](#code-review)\
-[Original Program Guidelines, Code, and Screenshots](#original-program-guidelines-code-and-screenshots)\
+[Original Program Guidelines and Code](#original-program-guidelines-and-code)\
 [Screenshots of Original Project](#screenshots-of-original-project)\
 [Plan](#plan)\
 [Project Reflection](#project-reflection)\
@@ -57,9 +57,9 @@ https://youtu.be/SGY3JVHHWBs
 
 ---
 
-# Original Program Guidelines, Code, and Screenshots
+# Original Program Guidelines and Code
 
-# Grazioso Salvare Specification
+## Grazioso Salvare Specification
 
 ## Overview
 Grazioso Salvare primarily uses dogs as search and rescue animals but plans to train monkeys for similar purposes. 
