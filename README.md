@@ -135,18 +135,9 @@ Add a **menu-driven loop** that:
 
 Below are screenshots of the original program:
 
-<figure align="center">
-  <figcaption>Menu Screenshot</figcaption>
-  <img src="assets/Orig_Program_Menu.png" alt="Menu Screenshot" width="400">
-</figure>
-<figure align="center">
-  <figcaption>List Screenshot</figcaption>
-  <img src="assets/Orig_Program_List.png" alt="List Screenshot" width="400">
-</figure>
-<figure align="center">
-  <figcaption>Intake Screenshot</figcaption>
-  <img src="assets/Orig_Program_Intake.png" alt="Intake Screenshot" width="400">
-</figure>
+| | | |
+|:-------------------------:|:-------------------------:|:-------------------------:|
+Original Menu <img src="assets/Orig_Program_Menu.png" alt="Menu Screenshot" width="400"> | Original List <img src="assets/Orig_Program_List.png" alt="List Screenshot" width="400"> | Original Intake <img src="assets/Orig_Program_Intake.png" alt="Intake Screenshot" width="400">
 
 ---
 
@@ -212,6 +203,10 @@ Click on the link below to see a short video of my completed project.
 
 # Screenshots of Enhanced Project
 
+| | | |
+|:-------------------------:|:-------------------------:|:-------------------------:|
+Enhanced Homescreen <img src="assets/Enhanced_Home.png" alt="Homescreen Screenshot" width="400"> | Enhanced Intake <img src="assets/Enhanced_Intake.png" alt="Enhanced Intake Screenshot" width="400"> | Enhanced Animal List <img src="assets/Enhanced_List.png" alt="Enhanced Animal List Screenshot" width="400"> |
+Enhanced Login <img src="assets/Enhanced_Login.png" alt="Enhanced Login Screenshot" width="400"> | Enhanced Register <img src="assets/Enhanced_Register.png" alt="Enhanced Register Screenshot" width="400">
 
 ---
 
