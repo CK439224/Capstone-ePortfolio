@@ -1,7 +1,15 @@
 <div>
+    <!-- Container for the home button of the login form -->
+    <div class="home-button-container">
+        <button class="home-button" (click)="navigateToHome()">Home</button>
+      </div>
     <!-- Container for the login page title -->
     <div class="title-container">
         <h1>Login</h1>
+    </div>
+    <!-- Generic error message -->
+    <div *ngIf="showErrorMessage" class="error-message">
+        <p>Invalid email or password. Please try again.</p>
     </div>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <!-- Email input field -->

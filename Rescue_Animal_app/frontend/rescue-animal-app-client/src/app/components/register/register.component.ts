@@ -14,9 +14,17 @@ import { CommonModule } from '@angular/common';
 export class RegisterComponent {
   // The main form group for user registration
   registerForm: FormGroup;
+  showErrorMessage = false; // Flag to control the visibility of the error message
 
   // Predefined registration code for validation
   private readonly registrationCode = 'TestCode';
+
+  /**
+   * Navigates to the homepage of the application.
+   */
+  navigateToHome(): void {
+    this.router.navigate(['/home']);
+  }
 
   /**
    * Constructor to initialize form controls and inject necessary services.
@@ -64,11 +72,13 @@ export class RegisterComponent {
    */
   onSubmit(): void {
     if (this.registerForm.invalid) {
+      this.showErrorMessage = true; // Show the error message
       // Log errors for debugging purposes and halt the process
       console.error('Registration form is invalid', this.registerForm.errors);
       return;
     }
 
+    this.showErrorMessage = false; // Hide the error message on valid submission
     // Call the AuthService to handle user registration
     this.authService.register(this.registerForm.value).subscribe({
       next: (response) => {

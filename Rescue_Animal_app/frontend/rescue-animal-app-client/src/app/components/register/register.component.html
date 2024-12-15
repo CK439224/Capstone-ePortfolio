@@ -1,7 +1,16 @@
 <div>
+  <!-- Container for the home button of the registration form -->
+  <div class="home-button-container">
+    <button class="home-button" (click)="navigateToHome()">Home</button>
+  </div>
   <!-- Container for the title of the registration form -->
   <div class="title-container">
     <h1>Register</h1>
+  </div>
+
+  <!-- Generic error message -->
+  <div *ngIf="showErrorMessage" class="error-message">
+    <p>Please fill out all required fields correctly.</p>
   </div>
 
   <!-- Registration form with Angular's reactive form group -->
@@ -59,6 +68,6 @@
     </div>
 
     <!-- Submit button, disabled if the form is invalid -->
-    <button type="submit" [disabled]="registerForm.invalid">Register</button>
+    <button type="submit">Register</button>
   </form>
 </div>
