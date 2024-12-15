@@ -8,6 +8,12 @@
 
 ---
 
+[OVERVIEW](overview)
+[Code Review](#code-review)
+[Original Program Guidelines, Code, and Screenshots](#original-program-guidelines-code-and-screenshots)
+[Plan](#plan)
+[Project Reflection](#project-reflection)
+[Video of Enhanced Project](#video-of-enhanced-project)
 [Various Links](#various-links)
 
 ---
@@ -28,17 +34,13 @@ The importance of **security** became increasingly apparent as I advanced throug
 
 ---
 
-<p align="center">
-OVERVIEW
-</p>
+# OVERVIEW
 
 For my final project in the SNHU CS-499 Capstone, I demonstrated the knowledge and skills acquired throughout my Bachelor of Science in Computer Science program. The project involved selecting a previously developed program or set of programs and enhancing them in three key categories: Software Design and Engineering, Algorithms and Data Structures, and Databases. I chose to focus on a single program, applying enhancements across all three categories to showcase a comprehensive approach to software development. 
 
 ---
 
-<p align="center">
-Code Review
-</p>
+# Code Review
 
 I conducted a code review addressing three key computer science categories: software engineering and design, algorithms and data structures, and databases. The code review was submitted as a video walkthrough where I analyzed existing code for weaknesses, limitations, and vulnerabilities, while proposing enhancements to improve functionality, structure, and efficiency. Click the link below the image to view my code review on YouTube.
 
@@ -52,9 +54,7 @@ https://youtu.be/SGY3JVHHWBs
 
 ---
 
-<p align="center">
-Original Program Guidelines, Code, and Screenshots
-</p>
+# Original Program Guidelines, Code, and Screenshots
 
 # Grazioso Salvare Specification
 
@@ -148,9 +148,7 @@ Below are screenshots of the original program:
 
 ---
 
-<p align="center">
-Plan
-</p>
+# Plan
 
 ### Category One: Software Engineering and Design
 
@@ -182,9 +180,7 @@ To enhance the Rescue Animal program in alignment with database management best 
 
 ---
 
-<p align="center">
-Project Reflection
-</p>
+# Project Reflection
 
 Starting this project early allowed me to maintain a steady pace and gave me extra time to address potential challenges. This approach proved beneficial as I transitioned the original standalone Java application into a full-stack application, showcasing an enhanced understanding of software design and development. I made significant improvements, including better encapsulation and the implementation of design patterns, such as the Factory Method in `RescueAnimal.java`. Additionally, I integrated MongoDB for database functionality, enabling seamless data handling between the front-end and back-end.
 
@@ -196,9 +192,9 @@ This reflection highlights both my progress and my commitment to continuously im
 
 
 ---
-<p align="center">
-Video of Enhanced Project
-</p>
+
+# Video of Enhanced Project
+
 
 Click on the link below to see a short video of my completed project.
 
@@ -213,10 +209,6 @@ Click on the link below to see a short video of my completed project.
 ---
 
 # Various Links
-
-<p align="center">
-Various Links
-</p>
 
 [Final Rescue Animals App Code](https://github.com/CK439224/Capstone-ePortfolio.github.io/tree/version_4)
 
