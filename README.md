@@ -8,7 +8,7 @@
 
 ---
 
-[OVERVIEW](overview)
+[OVERVIEW](#overview)
 [Code Review](#code-review)
 [Original Program Guidelines, Code, and Screenshots](#original-program-guidelines-code-and-screenshots)
 [Plan](#plan)
