@@ -15,7 +15,7 @@
 [Plan](#plan)\
 [Project Reflection](#project-reflection)\
 [Video of Enhanced Project](#video-of-enhanced-project)\
-[Screenshots of Enhanced Project](screenshots-of-enhanced-project)\
+[Screenshots of Enhanced Project](#screenshots-of-enhanced-project)\
 [Various Links](#various-links)
 
 ---
