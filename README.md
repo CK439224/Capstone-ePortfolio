@@ -1,3 +1,5 @@
+<a name="top"></a>
+
 <div align="center">
   <img src="assets/Enhanced_Home.png" alt="Alt Text" width="800" height="auto">
 </div>
@@ -211,3 +213,6 @@ Various Links
 [Final Rescue Animals App Code](https://github.com/CK439224/Capstone-ePortfolio.github.io/tree/version_4)
 
 [Files submitted during Term](https://github.com/CK439224/Capstone-ePortfolio.github.io/tree/main/Submitted_Files)
+
+---
+[Back to top](#top)
