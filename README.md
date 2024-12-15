@@ -7,13 +7,15 @@
 # Christopher King SNHU CS-499 Capstone-ePortfolio
 
 ---
+# Contents
 
-[OVERVIEW](#overview)
-[Code Review](#code-review)
-[Original Program Guidelines, Code, and Screenshots](#original-program-guidelines-code-and-screenshots)
-[Plan](#plan)
-[Project Reflection](#project-reflection)
-[Video of Enhanced Project](#video-of-enhanced-project)
+[OVERVIEW](#overview)\
+[Code Review](#code-review)\
+[Original Program Guidelines, Code, and Screenshots](#original-program-guidelines-code-and-screenshots)\
+[Plan](#plan)\
+[Project Reflection](#project-reflection)\
+[Video of Enhanced Project](#video-of-enhanced-project)\
+[Screenshots of Enhanced Project](screenshots-of-enhanced-project)\
 [Various Links](#various-links)
 
 ---
@@ -205,6 +207,11 @@ Click on the link below to see a short video of my completed project.
 <p align="center">
   https://youtu.be/FC-kc5ZNhuk
 </p>
+
+---
+
+# Screenshots of Enhanced Project
+
 
 ---
 
