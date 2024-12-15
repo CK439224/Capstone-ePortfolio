@@ -12,6 +12,7 @@
 [OVERVIEW](#overview)\
 [Code Review](#code-review)\
 [Original Program Guidelines, Code, and Screenshots](#original-program-guidelines-code-and-screenshots)\
+[Screenshots of Original Project](#screenshots-of-original-project)\
 [Plan](#plan)\
 [Project Reflection](#project-reflection)\
 [Video of Enhanced Project](#video-of-enhanced-project)\
@@ -133,7 +134,8 @@ Add a **menu-driven loop** that:
 
 [Original_Program/IT_145_Final_Project_v3.0/Final_Project_v3.0](https://github.com/CK439224/Capstone-ePortfolio.github.io/tree/main/Original_Program/IT_145_Final_Project_v3.0/Final_Project_v3.0)
 
-Below are screenshots of the original program:
+
+# Screenshots of Original Project
 
 | | | |
 |:-------------------------:|:-------------------------:|:-------------------------:|
