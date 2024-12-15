@@ -6,6 +6,12 @@
 
 # Christopher King SNHU CS-499 Capstone-ePortfolio
 
+---
+
+[Various Links](#various-links)
+
+---
+
 <p align="center">
 Professional Self-Assessment
 </p>
@@ -205,6 +211,8 @@ Click on the link below to see a short video of my completed project.
 </p>
 
 ---
+
+# Various Links
 
 <p align="center">
 Various Links
