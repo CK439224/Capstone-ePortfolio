@@ -209,3 +209,5 @@ Various Links
 </p>
 
 [Final Rescue Animals App Code](https://github.com/CK439224/Capstone-ePortfolio.github.io/tree/version_4)
+
+[Files submitted during Term](https://github.com/CK439224/Capstone-ePortfolio.github.io/tree/main/Submitted_Files)
